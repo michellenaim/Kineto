@@ -1,5 +1,8 @@
 .DS_STORE
-node_modules
+node_modules/
+master.key
+bundle.js
+bundle.js.map
 scripts/flow/*/.flowconfig
 .flowconfig
 *~
