@@ -5,6 +5,7 @@ bundle.js
 bundle.js.map
 scripts/flow/*/.flowconfig
 .flowconfig
+tmp/cache/
 *~
 *.pyc
 .grunt
@@ -39,3 +40,6 @@ packages/react-devtools-extensions/.tempUserDataDir
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
 packages/react-devtools-scheduling-profiler/dist
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
