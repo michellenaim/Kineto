@@ -4,9 +4,13 @@
     <title>Kineto</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="" type="text/css">
+    <script type="text/javascript">
+     window.kinetoLogo = "<%= image_url('Kineto_logo.png') %>";
+     </script>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
     <% if current_user %>
     <script>
       window.currentUser = {

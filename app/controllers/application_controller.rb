@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def login!(user)
     session[:session_token] = user.session_token
@@ -18,14 +18,13 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !current_user.nil?
-  end
-  
-  def require_logged_out
-    redirect_to user_url(current_user) if logged_in?
+    !!current_user
   end
 
   def require_logged_in
-    redirect_to new_session_url unless logged_in?
+    unless current_user
+      render json: { base: ['invalid credentials'] }, status: 401
+    end
   end
+  
 end
