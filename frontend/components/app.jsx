@@ -8,12 +8,12 @@ import HomeContainer from './home/home_container';
 
 
 export default () => (
-    <div>
+    <React.Fragment>
         <Route path="/" component={NavBarContainer} />
         <Switch>
             <Route exact path="/" component={HomeContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
         </Switch>
-    </div>
+    </React.Fragment>
 );

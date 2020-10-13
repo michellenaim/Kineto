@@ -1,13 +1,43 @@
-body, html {
-  height: 100%;
+.welcome-h1{
+  color: white;
+  background: black;
+  height: 105px; 
+  width: 400px;
+  font-size: 45px;
+  justify-content: center;
+}
+
+.welcome-h3{
+  color: white;
+  background: pink;
+  height: 35px; 
+  width: 490px;
+  font-size: 27px;
+  justify-content: center;
+}
+
+.welcome-p{
+  color: white;
+  background: purple;
+  height: 25px; 
+  width: 490px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.welcome-h1, .welcome-h3, .welcome-p{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .home{
-    background-image: url("homepage_background.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -20,4 +50,10 @@ body, html {
     text-align: center;
     padding: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    margin: 20px;
+    border-radius: 3px;
+    border: transparent;
+    font-weight: bold;
+    font-size: 17px;
 }

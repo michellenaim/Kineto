@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout }) => {
     const display = currentUser ? (
-        <div>
+        <div className="navloggedin">
             <p>Home</p>
             <p>Genres</p>
             <p>My List</p>
@@ -11,7 +11,7 @@ const NavBar = ({ currentUser, logout }) => {
                 <input type="text" placeholder="Search.." name="search"></input>
                     <button type="submit"><i class="fa fa-search"></i></button>
             <p>{currentUser.email}</p>
-            <button onClick={logout}>Log Out</button>
+            <button className="btn" onClick={logout}>Log Out</button>
         </div>
     ) : (
             <div>
