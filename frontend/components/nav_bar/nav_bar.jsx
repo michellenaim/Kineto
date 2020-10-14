@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ currentUser, logout }) => {
+const NavBar = ({ path, currentUser, logout }) => {
     const display = currentUser ? (
         <div className="navloggedin">
             <p>Home</p>
@@ -15,7 +15,7 @@ const NavBar = ({ currentUser, logout }) => {
         </div>
     ) : (
             <div>
-                <Link className="btn" to="/login">Sign In</Link>
+                {(path !== "/login" && path !== "/signup") && (<Link className="btn" to="/login">Sign In</Link>)}
             </div>
         );
 
