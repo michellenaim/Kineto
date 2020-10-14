@@ -16,10 +16,12 @@ class Home extends React.Component{
     render() {
         return (
             <div className="home">
-                <h1 className="welcome-h1">Unlimited movies and more.</h1>
-                <h3 className="welcome-h3">Watch anywhere anytime.</h3>
-                <p className="welcome-p">Log in using a demo user or sign in/sign up on the top right!</p>
-                <button className="demo-button" onClick={this.handleDemoLogin}>DEMO LOG IN</button>
+                <div className="home-text">
+                    <h1 className="welcome-h1">Unlimited movies and more.</h1>
+                    <h3 className="welcome-h3">Watch anywhere anytime.</h3>
+                    <p className="welcome-p">Log in using a demo user or sign in/sign up on the top right!</p>
+                    <button className="demo-button" onClick={this.handleDemoLogin}>DEMO LOG IN</button>
+                </div>
             </div>
         )
     }

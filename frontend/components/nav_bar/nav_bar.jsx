@@ -15,15 +15,13 @@ const NavBar = ({ currentUser, logout }) => {
         </div>
     ) : (
             <div>
-                <Link className="btn" to="/signup">Sign Up</Link>
-                &nbsp;
-                <Link className="btn" to="/login">Log In</Link>
+                <Link className="btn" to="/login">Sign In</Link>
             </div>
         );
 
     return (
         <header className="nav-bar">
-            <img className="kineto-logo" src={window.kinetoLogo}></img>
+            <Link to="/"><img className="kineto-logo" src={window.kinetoLogo}></img></Link>
             <div>
                 {display}
             </div>

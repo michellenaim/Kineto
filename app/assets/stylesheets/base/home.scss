@@ -1,39 +1,46 @@
 .welcome-h1{
   color: white;
-  background: black;
   height: 105px; 
-  width: 400px;
-  font-size: 45px;
+  width: 550px;
+  font-size: 58px;
   justify-content: center;
 }
 
 .welcome-h3{
   color: white;
-  background: pink;
   height: 35px; 
   width: 490px;
   font-size: 27px;
   justify-content: center;
+  padding-top: 35px;
 }
 
 .welcome-p{
   color: white;
-  background: purple;
   height: 25px; 
   width: 490px;
-  font-size: 20px;
+  font-size: 18px;
   justify-content: center;
+  padding-top: 10px;
 }
 
 .welcome-h1, .welcome-h3, .welcome-p{
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .home{
-  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 900px;
+  margin-top: -200px;
+}
+
+.home-text{
+  margin-top: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,10 +57,12 @@
     text-align: center;
     padding: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    display: block;
+    display: flex;
     margin: 20px;
     border-radius: 3px;
     border: transparent;
     font-weight: bold;
     font-size: 17px;
+    margin-top: 40px;
+    justify-content: center;
 }

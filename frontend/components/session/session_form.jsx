@@ -46,14 +46,11 @@ class Signup extends React.Component {
             <div className="session-form">
                 <form className="form" onSubmit={this.handleSubmit}>
                 <h2 className="form-title">{this.props.formType}</h2>
-                    <label>Email:
-                        <input className= "input-email" type="text" value={this.state.email} onChange={this.update('email')} />
-                    </label>
-                    <label>Password:
-                        <input className="input-password" type="password" value={this.state.password} onChange={this.update('password')} />
-                    </label>
-                    {this.renderErrors()}
+                    <input className="input-email" placeholder="Email" type="text" value={this.state.email} onChange={this.update('email')} />
+                    <input className="input-password" placeholder="Password" type="password" value={this.state.password} onChange={this.update('password')} />
+                    <div className="errors">{this.renderErrors()}</div>
                     <button className="submit" type='submit' value={this.props.formType}>{this.props.formType}</button>
+                    <div className="redirect-text">{this.props.link}</div>
                 </form>
                 </div>
         );

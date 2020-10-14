@@ -1,69 +1,86 @@
 .session-form{
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.73));
-    width: 100%;
-    height: 1150px;
+    height: 900px;
     margin: 0;
     padding: 0;
-    position: relative;
-    background-size:cover;
-    background-repeat: no-repeat;
 }
 
 .form{
     position: absolute;
-    top: 100px;
+    top: 55px;
     left: 50%;
     margin-left: -220px;
     width: 450px;
-    height: 650px;
+    height: 550px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     z-index: 3;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #000;
     justify-content: space-around;
-    font-family: Arial, Helvetica, sans-serif;
     color: white
 }
 
 .form-title{
     font-weight: bold;
     font-size: 30px;
-    padding-top: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-}
-
-.input-email{
-    margin-top: 40px;
+    margin-top: 65px;
+    display: block;
+    font-weight: bold;
+    margin-left: 55px;
+    margin-bottom: 25px;
 }
 
 .input-email, .input-password{
     display: block;
     margin: 0 auto;
-    width: 320px;
+    width: 337px;
     height: 50px;
     border: none;
     border-radius: 5px;
-    background-color: #333;
+    background-color: rgb(51,51,51);
+    margin: 40px;
+    padding-left: 16px;
+    margin-left: 50px;
+}
+
+::placeholder{
+    color: rgb(140,140,140);
+    margin-left: 10px;
+}
+
+.errors{
+    color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+    margin: auto
 }
 
 .submit{
-    font-family: Arial, Helvetica, sans-serif;
     display: block;
     margin: 0 auto;
-    width: 344px;
+    width: 350px;
     height: 59px;
     border: none;
     border-radius: 5px;
     color: white;
     background-color: red;
-    margin-top: 30px;
+    margin-top: 40px;
     font-size: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-weight: bold;
+}
+
+.redirect-text{
+    margin-left: 55px;
+    color: gray;
+    margin-top: 40px;
+}
+
+.link{
+    color: white;
 }
