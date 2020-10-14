@@ -18,9 +18,13 @@ const NavBar = ({ path, currentUser, logout }) => {
             </div>
         </div>
     ) : (
-            <div>
-                <Link to="/"><img className="kineto-logo" src={window.kinetoLogo}></img></Link>
-                {(path !== "/login" && path !== "/signup") && (<Link className="btn" to="/login">Sign In</Link>)}
+            <div className="navloggedout">
+                    <div className="nav-left">
+                        <Link to="/"><img className="kineto-logo" src={window.kinetoLogo}></img></Link>
+                    </div>
+                    <div className="nav-right">
+                        {(path !== "/login" && path !== "/signup") && (<Link className="btn" to="/login">Sign In</Link>)}
+                    </div>
             </div>
         );
 
