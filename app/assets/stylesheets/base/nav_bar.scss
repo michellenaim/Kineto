@@ -7,14 +7,15 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-height: 60px;
+    border: white 2px solid
 }
 
-.btn{
+.loginbtn{
     background-color: #e50914;
     border-radius: 3px;
     border-color: transparent;
     font-size: 16px;
-    padding: 7px 17px;
     font-weight: 400;
     font-size: 1rem;
     float: right;
@@ -22,7 +23,31 @@
     color: white;
     cursor: pointer;
     display: flex;
-    justify-content: flex-end;
+    height: 30px;
+    width: 94px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.logoutbtn{
+    background-color: #e50914;
+    border-radius: 3px;
+    border-color: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    font-size: 1rem;
+    float: right;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    width: 94px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-bar{
@@ -74,4 +99,6 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-height: 60px;
+    border: white 2px solid
 }

@@ -14,7 +14,7 @@ const NavBar = ({ path, currentUser, logout }) => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                 <button type="submit" className="search-icon"><i className="fa fa-search"></i></button>
                 <p className="email-nav">{currentUser.email}</p>
-                <button className="btn" onClick={logout}>Log Out</button>
+                <button className="logoutbtn" onClick={logout}>Log Out</button>
             </div>
         </div>
     ) : (
@@ -23,7 +23,7 @@ const NavBar = ({ path, currentUser, logout }) => {
                         <Link to="/"><img className="kineto-logo" src={window.kinetoLogo}></img></Link>
                     </div>
                     <div className="nav-right">
-                        {(path !== "/login" && path !== "/signup") && (<Link className="btn" to="/login">Sign In</Link>)}
+                        {(path !== "/login" && path !== "/signup") && (<Link className="loginbtn" to="/login">Sign In</Link>)}
                     </div>
             </div>
         );
