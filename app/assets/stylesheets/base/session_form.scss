@@ -43,6 +43,10 @@
     margin-left: 50px;
 }
 
+// .input-password{
+//     margin-bottom: -10px;
+// }
+
 ::placeholder{
     color: rgb(140,140,140);
     margin-left: 10px;
@@ -55,7 +59,10 @@
     justify-content: center;
     align-items: center;
     left: 30px;
-    margin: auto
+    margin: auto;
+    height: 15px;
+    width: 355px;
+    margin-bottom: 5px;
 }
 
 .submit{
@@ -67,12 +74,13 @@
     border-radius: 5px;
     color: white;
     background-color: red;
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .redirect-text{
