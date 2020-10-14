@@ -5,7 +5,9 @@
 }
 
 .navloggedin{
-    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .btn{
@@ -20,6 +22,8 @@
     margin: 5px;
     color: white;
     cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav-bar{
@@ -30,4 +34,37 @@
     align-items: center;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.nav-title{
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: white
+}
+
+.nav-title:hover{
+    color: lightgray
+}
+
+.nav-left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-right{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    padding: 20px 10px 20px 20px;
+}
+
+.email-nav{
+    margin-right: 10px;
+}
+
+.search-icon{
+    margin-right: 10px;
 }
