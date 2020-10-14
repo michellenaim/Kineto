@@ -15,7 +15,6 @@
     background: rgba(0, 0, 0, 0.85);
     z-index: 3;
     border-radius: 5px;
-    border: 1px solid #000;
     justify-content: space-around;
     color: white
 }
@@ -43,9 +42,6 @@
     margin-left: 50px;
 }
 
-// .input-password{
-//     margin-bottom: -10px;
-// }
 
 ::placeholder{
     color: rgb(140,140,140);
