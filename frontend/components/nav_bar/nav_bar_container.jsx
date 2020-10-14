@@ -5,6 +5,8 @@ import { logout } from '../../actions/session_actions';
 
 const Test = function(props) {
     return <NavBar 
+        currentUser={props.currentUser}
+        logout={props.logout}
         path={props.history.location.pathname} 
         />;
 }
