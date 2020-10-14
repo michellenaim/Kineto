@@ -10,7 +10,7 @@
      </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <% if current_user %>
     <script>
       window.currentUser = {
