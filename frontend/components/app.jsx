@@ -5,6 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import LogInFormContainer from './session/login_form_container';
 import HomeContainer from './home/home_container';
+import MovieIndexContainer from "./browse/movie_index_container"
 
 export default () => (
     <React.Fragment>
@@ -13,6 +14,7 @@ export default () => (
             <Route exact path="/" component={HomeContainer} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
+            <ProtectedRoute path="/browse" component={MovieIndexContainer} />
             <Redirect from='/*' to="/"/>
         </Switch>
     </React.Fragment>

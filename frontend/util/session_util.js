@@ -1,6 +1,7 @@
 import { $CombinedState } from "redux"
 
 export const postUser = user => {
+    debugger
     return $.ajax({
         url: '/api/users',
         method: 'POST',
@@ -9,6 +10,7 @@ export const postUser = user => {
 };
 
 export const postSession = user => {
+    debugger
     return $.ajax({
         url: '/api/session',
         method: 'POST',

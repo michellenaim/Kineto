@@ -1,11 +1,11 @@
 class Api::MoviesController < ApplicationController
     def index 
-        @videos = Video.all
+        @movies = Movie.all
         render :index
     end
 
     def show
-        @movie = Chirp.find(params[:id])
+        @movie = Movie.find(params[:id])
         if @movie
             render :show
         else

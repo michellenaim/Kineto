@@ -5,7 +5,7 @@ Rails.application.routes.draw do
         resources :users
         resource :session, only: [:create, :destroy]
         resources :movies, only: [:index, :show]
-    end
+      end
 
 
   root to: 'root#root'

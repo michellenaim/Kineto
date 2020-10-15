@@ -10,7 +10,8 @@ class Home extends React.Component{
     handleDemoLogin(e) {
         e.preventDefault();
         const user = { email: "test@test.com", password: "password" }
-        this.props.login(user);
+        this.props.login(user)
+            .then(user => this.props.history.push('/browse'))
     };
 
     render() {
