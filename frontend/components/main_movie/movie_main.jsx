@@ -16,7 +16,7 @@ class MovieMain extends React.Component{
         const {movies} = this.props
         const allMovies = movies.map((movie) => {
             return (
-                <span >
+                <div className="container">
                     <div className="main-movie-info">
                         <p className="main-movie-title">{movie.title}</p>
                         <p className="main-movie-des">{movie.description}</p>
@@ -30,7 +30,7 @@ class MovieMain extends React.Component{
                         <source src={movie.movieURL} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                </span>
+                </div>
             )
         })
 
