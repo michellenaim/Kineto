@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Movie.destroy_all
 Movie.connection.execute('ALTER SEQUENCE movies_id_seq RESTART WITH 1')
 
+# user= User.create!()
 
 movie1 = Movie.create!(
         title: "The Silence Of The Lambs",
