@@ -5,8 +5,8 @@ const NavBar = (props) => {
     const display = props.currentUser ? (
         <div className="navloggedin">
             <div className="nav-left">
-                <Link to="/"><img className="kineto-logo" src={window.kinetoLogo}></img></Link>
-                <p className="nav-title">Home</p>
+                <Link to="/browse"><img className="kineto-logo" src={window.kinetoLogo}></img></Link>
+                <Link to="/browse"><p className="nav-title">Home</p></Link>
                 <p className="nav-title">Genres</p>
                 <p className="nav-title">My List</p>
             </div>
@@ -14,7 +14,7 @@ const NavBar = (props) => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                 <button type="submit" className="search-icon"><i className="fa fa-search"></i></button>
                 <p className="email-nav">{props.currentUser.email}</p>
-                <button className="logoutbtn" onClick={props.logout}>Log Out</button>
+                <button className="logoutbtn" onClick={() => {props.logout().then(() => props.history.push('/'))}}>Log Out</button>
             </div>
         </div>
     ) : (

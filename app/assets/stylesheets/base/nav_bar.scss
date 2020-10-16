@@ -8,6 +8,8 @@
     justify-content: space-between;
     width: 100%;
     height: 70px;
+    background-color: black;
+
 }
 
 .loginbtn{
@@ -50,13 +52,13 @@
 }
 
 .nav-bar{
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
+    // margin-left: 20px;
+    // margin-right: 20px;
 }
 
 .nav-title{
@@ -75,6 +77,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 7px;
 }
 
 .nav-right{
@@ -83,6 +88,9 @@
     align-items: center;
     color: white;
     padding: 20px 10px 20px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 7px;
 }
 
 .email-nav{
@@ -90,8 +98,11 @@
 }
 
 .search-icon{
-    margin-right: 10px;
+    margin-right: 15px;
     cursor: pointer;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .navloggedout{

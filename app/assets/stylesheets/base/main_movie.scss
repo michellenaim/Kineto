@@ -1,5 +1,71 @@
-.test{
+.main-movie-title{
+    font-weight: bolder;
+    font-size: 35px;
+    padding:5px;
+}
+
+.main-movie-des{
+    font-size: 17px;
+    max-width: 35%;
+    max-height: 20%;
+    padding:10px;
+}
+
+.main-movie-video{
+    width: 100%; 
+    background-color: black;
+}
+
+.main-movie-info{
     color: white;
-    padding: 5px;
-    border: red solid 2px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 55%;
+    left: 7%;
+    font-family: sans-serif;
+    opacity: 90%;
+    z-index: 1;
+}
+
+.main-play-button{
+    border: none;
+    font-size: 18px;
+    background-color: white;
+    height: 45px;
+    width: 121px;
+    text-align: center;
+    border-radius: 3px;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.main-play-button:hover {
+    background-color: lightgray;
+}
+
+.main-info-button:hover {
+    background-color: rgba(109,109,110,0.4);
+}
+
+.main-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    width: 292px;
+}
+
+.main-info-button {
+    border: none;
+    font-size: 18px;
+    background-color: rgba(109,109,110,0.7);
+    color: white;
+    height: 45px;
+    width: 161px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
 }
