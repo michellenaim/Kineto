@@ -5,7 +5,6 @@ fieldset, label, input, textarea,
 span, article, footer, time, small {
   margin: 0;
   padding: 0;
-  // outline: 0;
   font: inherit;
   font-weight: inherit;;
   color: inherit;
@@ -14,6 +13,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: none;
+  outline: none;
 }
 
 ul {
