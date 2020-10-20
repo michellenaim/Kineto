@@ -3,10 +3,14 @@ import React from 'react';
 class Genre extends React.Component{
     constructor(props) {
         super(props)
+        this.state = {
+            selected: null
+        }
     }
 
     componentDidMount(){
         this.props.fetchGenre(this.props.genreId);  
+        this.props.fetchMovies();
     }
 
     render() {
@@ -16,6 +20,18 @@ class Genre extends React.Component{
         if (!this.props.genre) {
             return null
         }
+
+        const genreMovies = movies
+            .filter(movie => new Set(genre.movieIds).has(movie.id));
+
+        return (
+            <div>
+                {genreMovies.map(movie => 
+                <p> {movie.title}</p>
+                )}
+            </div>
+        )
+    
 
         // genreMovies = []
         
@@ -37,12 +53,12 @@ class Genre extends React.Component{
 
         // }
 
-        return (
-            <div className="genre">
-                <div>{genre.name}</div>
-                {/* {genreMovies} */}
-            </div>
-        )
+        // return (
+        //     <div className="genre">
+        //         <div>{genre.name}</div>
+        //         {/* {genreMovies} */}
+        //     </div>
+        // )
     }
      
 }

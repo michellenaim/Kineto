@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { fetchGenre, fetchGenres } from "../../actions/genre_actions";
+import { fetchMovies } from '../../actions/movie_actions';
 import Genre from "./genre";
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,8 +17,7 @@ const mapDispatchToProps = dispatch => {
     return {
     fetchGenres: () => dispatch(fetchGenres()),
     fetchGenre: (genre) => dispatch(fetchGenre(genre)),
-    // fetchMovies:
-    }
+    fetchMovies: () => dispatch(fetchMovies()),    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Genre);
