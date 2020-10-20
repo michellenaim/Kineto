@@ -1,12 +1,35 @@
-html, body, header, nav, h1, a,
-ul, li, strong, main, button, i,
-section, img, div, h2, h3, p, form,
-fieldset, label, input, textarea,
-span, article, footer, time, small {
+html,
+body,
+header,
+nav,
+h1,
+a,
+ul,
+li,
+strong,
+main,
+button,
+i,
+section,
+img,
+div,
+h2,
+h3,
+p,
+form,
+fieldset,
+label,
+input,
+textarea,
+span,
+article,
+footer,
+time,
+small {
   margin: 0;
   padding: 0;
   font: inherit;
-  font-weight: inherit;;
+  font-weight: inherit;
   color: inherit;
   text-align: inherit;
   text-decoration: inherit;
@@ -25,8 +48,6 @@ img {
   width: 100%;
   height: auto;
 }
-
-
 
 /* Clearfix */
 
