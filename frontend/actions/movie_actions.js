@@ -1,7 +1,9 @@
 import * as APIUtil from '../util/movie_util';
+import * as SearchUtil from "../search/search_util"
 
 export const RECEIVE_MOVIES = 'RECEIVE_MOVIES';
 export const RECEIVE_MOVIE = 'RECEIVE_MOVIE';
+export const CLEAR_SEARCH = "CLEAR_SEARCH"
 
 export const receiveMovies = movies => ({
   type: RECEIVE_MOVIES,
@@ -12,6 +14,10 @@ export const receiveMovie = movie => ({
   type: RECEIVE_MOVIE,
   movie,
 });
+
+// export const clearSearch = () => ({
+//   type: CLEAR_SEARCH,
+// });
   
 
 export const fetchMovies = () => (dispatch) => {
@@ -24,4 +30,8 @@ export const fetchMovie = (movieId) => (dispatch) => {
     dispatch(receiveMovie(movie))});
 }    
 
-
+// export const search = (search) => (dispatch) => {
+//   return SearchUtil.fetchSearch(search).then((movies) => {
+//     return dispatch(receiveMovies(movies));
+//   });
+// };

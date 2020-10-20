@@ -63,8 +63,7 @@
 
 .nav-title{
     margin-left: 20px;
-    text-decoration: none;
-    font-size: 0.9em;
+    font-size: 14px;
     color: white;
     cursor: pointer;
 }
@@ -110,4 +109,61 @@
     justify-content: space-between;
     width: 100%;
     height: 70px;
+}
+
+#genre-link{
+    margin-left: 20px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+.genre-list {
+    width: 130px;
+    background: black;
+    position: absolute;
+    padding: 15px 5px;
+    padding-bottom: 14px;
+    color: white;
+    border: 1px groove darkgray;
+    top: 87%;
+    display: none;
+    top: 24px;
+    left: -34px;
+    z-index: 5;
+}
+
+.genre-list li {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.genre-list li:hover {
+  color: darkgray;
+}
+.genre-caret {
+  position: absolute;
+  top: -7%;
+  left: 40%;
+  transform: translate(-50%);
+  font-size: 20px;
+  width: 50px;
+  color: darkgray;
+}
+
+#genre-link{
+  position: relative;
+  display: inline-block;
+}
+
+#genre-link:hover .genre-list {
+  display: block;
+}
+
+.genre-list:hover {
+  display: inline;
+}
+
+.genre-name{
+  color: white;
 }

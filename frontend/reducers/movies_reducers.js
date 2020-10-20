@@ -1,7 +1,4 @@
-import {
-    RECEIVE_MOVIES,
-    RECEIVE_MOVIE
-} from '../actions/movie_actions';
+import { RECEIVE_MOVIES, RECEIVE_MOVIE} from '../actions/movie_actions';
 
 const moviesReducer = (state = {}, action) => {
     Object.freeze(state);
