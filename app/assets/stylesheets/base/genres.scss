@@ -3,26 +3,68 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .genre {
-  color: white;
-  font-size: 40px;
-  height: 200px;
   position: relative;
   left: 0;
   top: 0;
+  height: 200px;
+  background-color: black;
+  color: white;
+}
+
+.genre-title {
+  font-size: 30px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-bottom: 20px;
 }
 
 .movies {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .genre-item {
-  width: 250px;
+  width: 300px;
   height: 200px;
 }
 
 .movie-video {
-    width: 250px;
+  width: 300px;
   height: 200px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.movie-item {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.movie-info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  bottom: 10px;
+}
+
+.movie-info-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.movie-runtime {
+  font-size: 12px;
+}
+
+.list-button {
+  font-size: 30px;
+  margin-right: 10px;
+  z-index: 10;
 }

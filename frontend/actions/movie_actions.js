@@ -27,7 +27,7 @@ export const fetchMovies = () => (dispatch) => {
 
 export const fetchMovie = (movieId) => (dispatch) => {
   return APIUtil.fetchMovie(movieId).then((movie) => {
-    dispatch(receiveMovie(movie));
+    dispatch(receiveMovie(movie[movieId]));
   });
 };
 

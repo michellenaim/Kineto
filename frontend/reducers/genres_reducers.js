@@ -3,7 +3,6 @@ import { RECEIVE_GENRES, RECEIVE_GENRE } from "../actions/genre_actions";
 const GenresReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
-  // debugger
   switch (action.type) {
     case RECEIVE_GENRES:
       nextState = action.genres;

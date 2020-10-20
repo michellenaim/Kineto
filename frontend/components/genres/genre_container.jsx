@@ -4,7 +4,7 @@ import { fetchMovies } from "../../actions/movie_actions";
 import Genre from "./genre";
 
 const mapStateToProps = (state, ownProps) => {
-  const genreId = ownProps.match.params.genreId;
+  const genreId = ownProps.genreId || ownProps.match.params.genreId;
   return {
     genre: state.entities.genres[genreId],
     genreId,

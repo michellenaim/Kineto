@@ -25,7 +25,6 @@ class NavBar extends React.Component {
             <ul className="genre-list">
               <i className="fas fa-caret-up genre-caret"></i>
               {this.props.genres.map((genre) => {
-                // debugger
                 return (
                   <li key={genre.id} className="genre-name">
                     <Link to={`/genre/${genre.id}`}>{genre.name}</Link>
