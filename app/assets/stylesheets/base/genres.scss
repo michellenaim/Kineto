@@ -5,4 +5,24 @@
 .genre {
   color: white;
   font-size: 40px;
+  height: 200px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.movies {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.genre-item {
+  width: 250px;
+  height: 200px;
+}
+
+.movie-video {
+    width: 250px;
+  height: 200px;
 }

@@ -33,6 +33,13 @@ case Rails.env
               runtime: "1h58",  
             )
 
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/movie.mp4')
+      silence_of_the_lambs.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/thumbail.jpg')
+      silence_of_the_lambs.photo.attach(io: file, filename: 'thumbnail.jpg')
+
+
       enola_holmes = Movie.create!(
         title: "Enola Holmes",
         description: "While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.",
@@ -40,6 +47,12 @@ case Rails.env
         rating: "PG 13", 
         runtime: "2h03", 
       )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/2/movie.mp4')
+      enola_holmes.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/2/thumbail.jpg')
+      enola_holmes.photo.attach(io: file, filename: 'thumbnail.jpg')
       
       the_irishman = Movie.create!(
         title: "The Irishman",
@@ -48,6 +61,12 @@ case Rails.env
         rating: "R", 
         runtime: "3h29",
       )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/3/movie.mp4')
+      the_irishman.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/3/thumbail.jpg')
+      the_irishman.photo.attach(io: file, filename: 'thumbnail.jpg')
       
 #--------------- GENRES  ------------------------------------------
 
@@ -60,8 +79,8 @@ case Rails.env
 #--------------- MOVIE_GENRES LINK  --------------------------------
 
     MovieGenre.create(movie_id: silence_of_the_lambs.id, genre_id: thriller.id)
-    MovieGenre.create(movie_id: enola_holmes.id, genre_id: mystery.id)
-    MovieGenre.create(movie_id: the_irishman.id, genre_id: drama.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: the_irishman.id, genre_id: thriller.id)
 
 
   when "production"

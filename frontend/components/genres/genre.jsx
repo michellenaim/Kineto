@@ -1,10 +1,35 @@
 import React from "react";
 
+function GenreItem({ movie, selected, ...props }) {
+  const preview = (
+    <video
+      className="movie-video"
+      autoPlay
+      height="100%"
+      key={movie.movieURL}
+    >
+      <source src={movie.movieURL} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+
+  const image = (
+      <img width="250" src={movie.photoURL} />
+  );
+
+  return (
+      <div className="genre-item" onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
+        {selected ? preview : image}
+    </div>
+
+  )
+}
+
 class Genre extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: null,
+      preview: null,
     };
   }
 
@@ -25,39 +50,20 @@ class Genre extends React.Component {
     );
 
     return (
-      <div>
-        {genreMovies.map((movie) => (
-          <p> {movie.title}</p>
-        ))}
+      <div className="genre">
+        {genre.name}
+        <div className="movies">
+          {genreMovies.map((movie) => (
+            <GenreItem
+              movie={movie}
+              selected={this.state.preview === movie.id}
+                  onMouseEnter={() => this.setState({ preview: movie.id })}
+              onMouseLeave={() => this.setState({ preview: null })}
+            />
+          ))}
+        </div>
       </div>
     );
-
-    // genreMovies = []
-
-    // const genreMovies = movies.map(movie => {
-    //     if (this.props.genre.movie_ids.includes(movie.id)){
-    //         genreMovies.push(this.props.movies[movie.id])
-    // }})
-
-    // genreMovies.forEach(movie => {)
-    //     <div>
-    //         <p className="movie-title">{movie.title}</p>
-    //         <p className="movie-des">{movie.description}</p>
-    //         {/* <img className="movie-image" src={movie.photo} alt=""/> is it movie.photo?
-    //         <video className="movie-video" autoPlay>
-    //             <source src={movie.url} type="video/mp4" />
-    //                 Your browser does not support the video tag.
-    //         </video> */}
-    //     </div>
-
-    // }
-
-    // return (
-    //     <div className="genre">
-    //         <div>{genre.name}</div>
-    //         {/* {genreMovies} */}
-    //     </div>
-    // )
   }
 }
 
