@@ -1,5 +1,7 @@
-json.set! @genre.id do
-    json.extract! @genre, :id,:name, :movie_ids
+json.genre do
+    json.set! @genre.id do
+        json.extract! @genre, :id,:name, :movie_ids
+    end
 end
 
 json.movies do

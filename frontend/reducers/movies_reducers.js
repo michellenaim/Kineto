@@ -13,7 +13,8 @@ const moviesReducer = (state = {}, action) => {
         nextState[action.movie.id] = action.movie;
         return nextState;
       case RECEIVE_GENRE:
-        nextState[action.payload.id] = action.payload;
+        debugger
+        nextState[action.payload.movies] = action.payload.movies;
         return nextState;
     default:
       return state;
