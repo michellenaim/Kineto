@@ -27,7 +27,7 @@ class NavBar extends React.Component {
               {this.props.genres.map((genre) => {
                 return (
                   <li key={genre.id} className="genre-name">
-                    <Link to={`/genre/${genre.id}`}>{genre.name}</Link>
+                    <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
                   </li>
                 );
               })}
