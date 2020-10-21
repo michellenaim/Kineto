@@ -16,7 +16,7 @@ export default () => (
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <ProtectedRoute path="/browse" component={MovieIndexContainer} />
-      <ProtectedRoute path="/genre/:genreId" component={GenreContainer} />
+      <ProtectedRoute path="/genres/:genreId" component={GenreContainer} />
       <ProtectedRoute path="/movies/:movieId" />
       <Redirect from="/*" to="/" />
     </Switch>
