@@ -12,4 +12,13 @@ class Movie < ApplicationRecord
     has_many :genres,
         through: :movie_genres,
         source: :genre
+
+    has_many :lists,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :List
+
+    has_many :users,
+        through: :lists,
+        source: :user
 end

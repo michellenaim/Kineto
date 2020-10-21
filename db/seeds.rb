@@ -82,6 +82,11 @@ case Rails.env
     MovieGenre.create(movie_id: enola_holmes.id, genre_id: thriller.id)
     MovieGenre.create(movie_id: the_irishman.id, genre_id: thriller.id)
 
+#--------------- LIST  ---------------------------------------------
+
+      list1 = List.create(user_id: 1, movie_id: 2)
+      
+
 
   when "production"
       Movie.destroy_all

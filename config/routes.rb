@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         resource :session, only: [:create, :destroy]
         resources :movies, only: [:index, :show]
         resources :genres, only: [:index, :show]
+        resources :lists, only: [:create,:show,:destroy]
       end
 
 
