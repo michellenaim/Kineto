@@ -97,6 +97,8 @@ case Rails.env
       Movie.connection.execute('ALTER SEQUENCE movies_id_seq RESTART WITH 1')
       Genre.connection.execute('ALTER SEQUENCE genres_id_seq RESTART WITH 1')
       User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1')
+
+
 #--------------- DEMO USER ---------------------------------------
 
       demouser= User.create!(email: "test@test.com", password: "password")
@@ -112,7 +114,10 @@ case Rails.env
             )
 
       file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/movie.mp4')
-      silence_of_the_lambs.url.attach(io: file, filename: 'thumbnail.jpg')
+      silence_of_the_lambs.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/thumbail.jpg')
+      silence_of_the_lambs.photo.attach(io: file, filename: 'thumbnail.jpg')
 
 
       enola_holmes = Movie.create!(
@@ -122,6 +127,12 @@ case Rails.env
         rating: "PG 13", 
         runtime: "2h03", 
       )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/2/movie.mp4')
+      enola_holmes.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/2/thumbail.jpg')
+      enola_holmes.photo.attach(io: file, filename: 'thumbnail.jpg')
       
       the_irishman = Movie.create!(
         title: "The Irishman",
@@ -131,13 +142,27 @@ case Rails.env
         runtime: "3h29",
       )
 
-
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/3/movie.mp4')
+      the_irishman.url.attach(io: file, filename: 'movie.mp4')
       
-
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/3/thumbail.jpg')
+      the_irishman.photo.attach(io: file, filename: 'thumbnail.jpg')
+      
 #--------------- GENRES  ------------------------------------------
 
-      Thriller = Genre.create({ name: "Thriller"})
-      Mystery = Genre.create({ name: "Mysery"})
-      Drama = Genre.create({ name: "Drama"})
-      Romance = Genre.create({ name: "Romance"})
+    thriller = Genre.create({ name: "Thriller"})
+    mystery = Genre.create({ name: "Mysery"})
+    drama = Genre.create({ name: "Drama"})
+    romance = Genre.create({ name: "Romance"})
+
+
+#--------------- MOVIE_GENRES LINK  --------------------------------
+
+    MovieGenre.create(movie_id: silence_of_the_lambs.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: the_irishman.id, genre_id: thriller.id)
+
+#--------------- LIST  ---------------------------------------------
+
+      list1 = List.create(user_id: 1, movie_id: 2)
 end
