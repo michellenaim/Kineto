@@ -51,16 +51,20 @@ class Genre extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchGenre(this.props.genreId);
-    this.props.fetchMovies();
+    // this.props.fetchMovies();
   }
 
   render() {
     const { genre, movies } = this.props;
 
-    if (!this.props.genre) {
+    if (!this.props.genre || this.props.movies.length < 1) {
       return null;
     }
+
+    // debugger
+
     const genreMovies = movies.filter((movie) =>
       new Set(genre.movieIds).has(movie.id)
     );

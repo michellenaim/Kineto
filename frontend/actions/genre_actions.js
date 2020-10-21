@@ -11,6 +11,7 @@ const receiveGenres = (genres) => {
 };
 
 const receiveGenre = (payload) => {
+  // debugger
   return {
   type: RECEIVE_GENRE,
   payload,

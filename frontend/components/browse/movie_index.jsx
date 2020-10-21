@@ -13,6 +13,10 @@ class MovieIndex extends React.Component {
   }
 
   render() {
+    if (this.props.genres.length < 1) {
+      return null
+    }
+  
     return (
       <div>
         <MovieMainContainer />

@@ -68,6 +68,63 @@ case Rails.env
       file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/3/thumbail.jpg')
       the_irishman.photo.attach(io: file, filename: 'thumbnail.jpg')
       
+
+      i_am_mother = Movie.create!(
+        title: "I Am Mother",
+        description: "Following humanity's mass extinction, a teen raised alone by a maternal droid finds her entire world shaken when she encounters another human.",
+        year: 2019, 
+        rating: "TV-PG", 
+        runtime: "1h53",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/4/movie.mp4')
+      i_am_mother.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/4/thumbail.jpg')
+      i_am_mother.photo.attach(io: file, filename: 'thumbnail.jpg')
+
+      sleepless_in_seattle = Movie.create!(
+        title: "Sleepless In Seattle",
+        description: "Fate and a tenacious 8-year-old boy conspire to unite a lovelorn widower and an unhappily engaged journalist.",
+        year: 1993, 
+        rating: "PG", 
+        runtime: "1h45",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/5/movie.mp4')
+      sleepless_in_seattle.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/5/thumbail.jpg')
+      sleepless_in_seattle.photo.attach(io: file, filename: 'thumbnail.jpg')
+
+      murder_mystery = Movie.create!(
+        title: "Murder Mystery",
+        description: "On a long-awaited trip to Europe, a New York City cop and his hairdresser wife scramble to solve a baffling murder aboard a billionaire's yacht.",
+        year: 2019, 
+        rating: "PG-13", 
+        runtime: "1h37",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/6/movie.mp4')
+      murder_mystery.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/6/thumbail.jpg')
+      murder_mystery.photo.attach(io: file, filename: 'thumbnail.jpg')
+
+      the_ugly_truth = Movie.create!(
+        title: "The Ugly Truth",
+        description: "A chauvinistic morning-show commentator tries to prove the relationship theories he espouses on a segment called The Ugly Truth.",
+        year: 2009, 
+        rating: "R", 
+        runtime: "1h36",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/7/movie.mp4')
+      the_ugly_truth.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/7/thumbail.jpg')
+      the_ugly_truth.photo.attach(io: file, filename: 'thumbnail.jpg')
+
 #--------------- GENRES  ------------------------------------------
 
     thriller = Genre.create({ name: "Thriller"})
@@ -79,8 +136,17 @@ case Rails.env
 #--------------- MOVIE_GENRES LINK  --------------------------------
 
     MovieGenre.create(movie_id: silence_of_the_lambs.id, genre_id: thriller.id)
-    MovieGenre.create(movie_id: enola_holmes.id, genre_id: thriller.id)
-    MovieGenre.create(movie_id: the_irishman.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: mystery.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: drama.id)
+    MovieGenre.create(movie_id: the_irishman.id, genre_id: drama.id)
+    MovieGenre.create(movie_id: i_am_mother.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: sleepless_in_seattle.id, genre_id: romance.id)
+    MovieGenre.create(movie_id: sleepless_in_seattle.id, genre_id: drama.id)
+    MovieGenre.create(movie_id: murder_mystery.id, genre_id: mystery.id)
+    MovieGenre.create(movie_id: the_ugly_truth.id, genre_id: romance.id)
+
+
+
 
 #--------------- LIST  ---------------------------------------------
 
@@ -89,7 +155,7 @@ case Rails.env
 
 
   when "production"
-      Movie.destroy_all
+    Movie.destroy_all
       User.destroy_all
       Genre.destroy_all
       MovieGenre.destroy_all
@@ -148,6 +214,63 @@ case Rails.env
       file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/3/thumbail.jpg')
       the_irishman.photo.attach(io: file, filename: 'thumbnail.jpg')
       
+
+      i_am_mother = Movie.create!(
+        title: "I Am Mother",
+        description: "Following humanity's mass extinction, a teen raised alone by a maternal droid finds her entire world shaken when she encounters another human.",
+        year: 2019, 
+        rating: "TV-PG", 
+        runtime: "1h53",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/4/movie.mp4')
+      i_am_mother.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/4/thumbail.jpg')
+      i_am_mother.photo.attach(io: file, filename: 'thumbnail.jpg')
+
+      sleepless_in_seattle = Movie.create!(
+        title: "Sleepless In Seattle",
+        description: "Fate and a tenacious 8-year-old boy conspire to unite a lovelorn widower and an unhappily engaged journalist.",
+        year: 1993, 
+        rating: "PG", 
+        runtime: "1h45",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/5/movie.mp4')
+      sleepless_in_seattle.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/5/thumbail.jpg')
+      sleepless_in_seattle.photo.attach(io: file, filename: 'thumbnail.jpg')
+
+      murder_mystery = Movie.create!(
+        title: "Murder Mystery",
+        description: "On a long-awaited trip to Europe, a New York City cop and his hairdresser wife scramble to solve a baffling murder aboard a billionaire's yacht.",
+        year: 2019, 
+        rating: "PG-13", 
+        runtime: "1h37",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/6/movie.mp4')
+      murder_mystery.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/6/thumbail.jpg')
+      murder_mystery.photo.attach(io: file, filename: 'thumbnail.jpg')
+
+      the_ugly_truth = Movie.create!(
+        title: "The Ugly Truth",
+        description: "A chauvinistic morning-show commentator tries to prove the relationship theories he espouses on a segment called The Ugly Truth.",
+        year: 2009, 
+        rating: "R", 
+        runtime: "1h36",
+      )
+
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/7/movie.mp4')
+      the_ugly_truth.url.attach(io: file, filename: 'movie.mp4')
+      
+      file = open('https://kineto-seeds.s3-us-west-1.amazonaws.com/media/7/thumbail.jpg')
+      the_ugly_truth.photo.attach(io: file, filename: 'thumbnail.jpg')
+
 #--------------- GENRES  ------------------------------------------
 
     thriller = Genre.create({ name: "Thriller"})
@@ -159,10 +282,20 @@ case Rails.env
 #--------------- MOVIE_GENRES LINK  --------------------------------
 
     MovieGenre.create(movie_id: silence_of_the_lambs.id, genre_id: thriller.id)
-    MovieGenre.create(movie_id: enola_holmes.id, genre_id: thriller.id)
-    MovieGenre.create(movie_id: the_irishman.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: mystery.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: drama.id)
+    MovieGenre.create(movie_id: the_irishman.id, genre_id: drama.id)
+    MovieGenre.create(movie_id: i_am_mother.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: sleepless_in_seattle.id, genre_id: romance.id)
+    MovieGenre.create(movie_id: sleepless_in_seattle.id, genre_id: drama.id)
+    MovieGenre.create(movie_id: murder_mystery.id, genre_id: mystery.id)
+    MovieGenre.create(movie_id: the_ugly_truth.id, genre_id: romance.id)
+
+
+
 
 #--------------- LIST  ---------------------------------------------
 
       list1 = List.create(user_id: 1, movie_id: 2)
+      
 end

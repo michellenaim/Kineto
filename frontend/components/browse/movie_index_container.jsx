@@ -5,11 +5,9 @@ import { withRouter } from "react-router-dom";
 import { fetchMovies } from "../../actions/movie_actions";
 import { fetchGenre, fetchGenres } from "../../actions/genre_actions";
 
-const mapStateToProps = (state, ownProps) => {
-  const genreId = ownProps.match.params.genreId;
+const mapStateToProps = (state) => {
+  // debugger
   return {
-    genre: state.entities.genres[genreId],
-    genreId,
     genres: Object.values(state.entities.genres),
     movies: Object.values(state.entities.movies),
   };
