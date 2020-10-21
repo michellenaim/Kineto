@@ -1,5 +1,3 @@
-require "byebug"
-
 json.set! @genre.id do
     json.extract! @genre, :id,:name, :movie_ids
 end
