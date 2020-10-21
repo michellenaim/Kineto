@@ -7,7 +7,6 @@ const receiveGenres = (genres) => {
   return {
     type: RECEIVE_GENRES,
     genres,
-    // payload = movies, genres
   };
 };
 

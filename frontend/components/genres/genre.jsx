@@ -61,7 +61,6 @@ class Genre extends React.Component {
     if (!this.props.genre) {
       return null;
     }
-
     const genreMovies = movies.filter((movie) =>
       new Set(genre.movieIds).has(movie.id)
     );
@@ -72,6 +71,7 @@ class Genre extends React.Component {
         <div className="movies">
           {genreMovies.map((movie) => (
             <GenreItem
+              key={movie.id}
               movie={movie}
               selected={this.state.preview === movie.id}
                   onMouseEnter={() => this.setState({ preview: movie.id })}

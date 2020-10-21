@@ -5,11 +5,11 @@ const GenresReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_GENRES:
-      debugger
+      // debugger
       nextState = action.genres;
       return nextState;
       case RECEIVE_GENRE:
-        debugger
+        // debugger
         nextState[action.payload.genre] = action.payload.genre;
         return nextState;
     default:
