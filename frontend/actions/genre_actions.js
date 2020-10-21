@@ -11,10 +11,12 @@ const receiveGenres = (genres) => {
   };
 };
 
-const receiveGenre = (genre) => ({
+const receiveGenre = (payload) => {
+  return {
   type: RECEIVE_GENRE,
-  genre,
-});
+  payload,
+  }
+};
 
 export const fetchGenres = () => (dispatch) => {
   return GenreApiUtils.fetchGenres().then((genres) =>
@@ -24,6 +26,6 @@ export const fetchGenres = () => (dispatch) => {
 
 export const fetchGenre = (genreId) => (dispatch) => {
   return GenreApiUtils.fetchGenre(genreId).then((genre) =>
-    dispatch(receiveGenre(genre[genreId]))
+    dispatch(receiveGenre(genre))
   );
 };

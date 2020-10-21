@@ -5,8 +5,9 @@ bundle.js
 bundle.js.map
 scripts/flow/*/.flowconfig
 .flowconfig
-tmp/cache/
+tmp/*
 /public/assets
+.byebug_history
 *~
 *.pyc
 .grunt

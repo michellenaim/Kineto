@@ -14,6 +14,8 @@ class MovieMain extends React.Component {
 
   changeMute(e) {
     e.preventDefault();
+    // let mainMovie = document.getElementsByClassName("main-movie-video")
+    // mainMovie.muted = !mainMovie.muted;
     this.setState({ muted: !this.state.muted });
   }
 

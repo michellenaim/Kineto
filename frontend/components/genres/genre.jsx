@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { debug } from "webpack";
 
 function GenreItem({ movie, selected, ...props }) {
   const preview = (
@@ -31,17 +30,16 @@ function GenreItem({ movie, selected, ...props }) {
     </div>
   );
 
-  const image = <img width="250" src={movie.photoURL} />;
+  const image = (
+      <img width="250" src={movie.photoURL} />
+  );
 
   return (
-    <div
-      className="genre-item"
-      onMouseEnter={props.onMouseEnter}
-      onMouseLeave={props.onMouseLeave}
-    >
-      {selected ? preview : image}
+      <div className="genre-item" onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
+        {selected ? preview : image}
     </div>
-  );
+
+  )
 }
 
 class Genre extends React.Component {
@@ -53,7 +51,6 @@ class Genre extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     this.props.fetchGenre(this.props.genreId);
     this.props.fetchMovies();
   }
@@ -77,7 +74,7 @@ class Genre extends React.Component {
             <GenreItem
               movie={movie}
               selected={this.state.preview === movie.id}
-              onMouseEnter={() => this.setState({ preview: movie.id })}
+                  onMouseEnter={() => this.setState({ preview: movie.id })}
               onMouseLeave={() => this.setState({ preview: null })}
             />
           ))}

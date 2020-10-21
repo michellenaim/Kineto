@@ -1,4 +1,5 @@
 import { RECEIVE_MOVIES, RECEIVE_MOVIE } from "../actions/movie_actions";
+import { RECEIVE_GENRE } from "../actions/genre_actions"
 
 const moviesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -8,9 +9,12 @@ const moviesReducer = (state = {}, action) => {
     case RECEIVE_MOVIES:
       nextState = action.movies;
       return nextState;
-    case RECEIVE_MOVIE:
-      nextState[action.movie.id] = action.movie;
-      return nextState;
+      case RECEIVE_MOVIE:
+        nextState[action.movie.id] = action.movie;
+        return nextState;
+      case RECEIVE_GENRE:
+        nextState[action.payload.id] = action.payload;
+        return nextState;
     default:
       return state;
   }
