@@ -1,6 +1,10 @@
 class Api::MoviesController < ApplicationController
     def index 
-        @movies = Movie.all
+        if params[:genre_id]
+            @movies = Movie.joins(:genres).where(genres: {id: params[:genre_id]})
+        else
+            @movies = Movie.all
+        end
         render :index
     end
 

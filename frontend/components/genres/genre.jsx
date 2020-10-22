@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function GenreItem({ movie, selected, ...props }) {
+  
   const preview = (
     <div className="movie-item">
       <Link to={`/movies/${movie.id}`}>
@@ -29,7 +30,7 @@ function GenreItem({ movie, selected, ...props }) {
       </Link>
     </div>
   );
-
+    // debugger
   const image = (
       <img width="250" src={movie.photoURL} />
   );
@@ -45,40 +46,47 @@ function GenreItem({ movie, selected, ...props }) {
 class Genre extends React.Component {
   constructor(props) {
     super(props);
+    // debugger
     this.state = {
       preview: null,
     };
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchGenre(this.props.genreId);
-    // this.props.fetchMovies();
+    // this.props.fetchMoviesGenres();
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.genreId !== prevProps.genreId){
+      this.props.fetchGenre(this.props.genreId);
+    }
   }
 
   render() {
-    const { genre, movies } = this.props;
-
+    
     if (!this.props.genre || this.props.movies.length < 1) {
       return null;
     }
-
+    
     // debugger
+    const { genre, movies } = this.props;
 
-    const genreMovies = movies.filter((movie) =>
-      new Set(genre.movieIds).has(movie.id)
-    );
+    // const genreMovies = movies.filter((movie) =>
+    //   new Set(genre.movieIds).has(movie.id)
+    // );
+    // debugger
 
     return (
       <div className="genre">
         <p className="genre-title">{genre.name}</p>
         <div className="movies">
-          {genreMovies.map((movie) => (
+          {movies.map((movie) => (
             <GenreItem
               key={movie.id}
               movie={movie}
               selected={this.state.preview === movie.id}
-                  onMouseEnter={() => this.setState({ preview: movie.id })}
+              onMouseEnter={() => this.setState({ preview: movie.id })}
               onMouseLeave={() => this.setState({ preview: null })}
             />
           ))}

@@ -5,7 +5,10 @@ Rails.application.routes.draw do
         resources :users
         resource :session, only: [:create, :destroy]
         resources :movies, only: [:index, :show]
-        resources :genres, only: [:index, :show]
+        resources :movies_genres, only: [:index, :show]
+        resources :genres, only: [:index, :show] do
+            resources :movies, only: [:index]
+        end
         resources :lists, only: [:create,:show,:destroy]
       end
 

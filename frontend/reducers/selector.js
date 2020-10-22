@@ -1,7 +1,18 @@
-export const selectMoviesByGenre = (state, movie_ids) => {
+export const selectMoviesByGenre = (state, genreId) => {
+  debugger
+
+  const moviesgenres =  Object.values(state.entities.moviesgenres).filter((moviesgenre) => {
+      debugger
+      return moviesgenre.genre_id === genreId
+  })
   return Object.values(state.entities.movies).filter((movie) => {
-    return movie.id === moviegenre.movie_id;
-  });
+    moviesgenres.map((moviesgenre) => {
+        debugger
+        return moviesgenre.movie_id === movie.id
+    })
+  })
 };
 
-// how to get access to moviegenre??
+export default selectMoviesByGenre
+
+//where do we get movieId from?

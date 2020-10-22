@@ -11,3 +11,10 @@ export const fetchMovie = (movieId) => {
     method: "get",
   });
 };
+
+export const fetchMoviesGenres = () => {
+  return $.ajax({
+    url: `api/movies_genres`,
+    method: "get",
+  });
+}

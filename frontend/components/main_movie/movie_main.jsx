@@ -20,6 +20,11 @@ class MovieMain extends React.Component {
   }
 
   render() {
+
+    if (!this.props.movies.length){
+      return null
+    }
+
     const { movies } = this.props;
     const { muted } = this.state;
 
@@ -32,6 +37,7 @@ class MovieMain extends React.Component {
         <i className="fas fa-volume-up"></i>
       </button>
     );
+  
 
     const allMovies = movies.map((movie) => {
       return (
