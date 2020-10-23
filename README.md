@@ -35,7 +35,7 @@ The future directions for Kineto are to enable users to view the movie trailers 
 
 ### User Auth 
 
-![alt tag](https://i.pinimg.com/originals/a9/b7/9c/a9b79c9c87e3cd4e652b56b959a98820.gif)
+![alt tag](https://github.com/michellenaim/Kineto/blob/master/readme_gifs/user_auth.gif)
 
 * Users can sign up by creating an account on Kineto. They can also sign in to view the movie trailers' homepage.
 * Users may also skip the signing up process by clicking on the demo user - this will take them directly to the movie trailers' homepage.
@@ -45,7 +45,7 @@ The future directions for Kineto are to enable users to view the movie trailers 
 
 ### Movie Trailers Index
 
-![index](https://i.pinimg.com/originals/02/ff/7f/02ff7f732ad506b37788c046343b8e03.gif)
+![index](https://github.com/michellenaim/Kineto/blob/master/readme_gifs/movie_trailers_index.gif)
 
 * A main movie trailer is rendered when clicking on "Home" on the nav bar. Under it, the genres are listed with movie trailers filtered for each genre.
 * Users can mute or unmute the main movie trailer.
@@ -93,7 +93,7 @@ The future directions for Kineto are to enable users to view the movie trailers 
 
 ### Genre Show
 
-![genre_show](https://i.pinimg.com/originals/02/ff/7f/02ff7f732ad506b37788c046343b8e03.gif)
+![genre_show](https://github.com/michellenaim/Kineto/blob/master/readme_gifs/user_auth.gif)
 
 * Users can select a genre in the nav bar genre dropdown list. This takes them to the genre show page.
 * Similar to the movie trailers' index page, users can hover on the movie trailers' thumbnail to view the trailer, title and movie runtime.
