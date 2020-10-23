@@ -93,7 +93,7 @@ The future directions for Kineto are to enable users to view the movie trailers 
 
 ### Genre Show
 
-![genre_show](https://github.com/michellenaim/Kineto/blob/master/readme_gifs/user_auth.gif)
+![genre_show](https://github.com/michellenaim/Kineto/blob/master/readme_gifs/genre_show.gif)
 
 * Users can select a genre in the nav bar genre dropdown list. This takes them to the genre show page.
 * Similar to the movie trailers' index page, users can hover on the movie trailers' thumbnail to view the trailer, title and movie runtime.
