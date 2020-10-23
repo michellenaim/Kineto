@@ -10,7 +10,7 @@
   * [Technologies](#technologies)
   * [Features](#features)
     * [User Auth](#user-auth)
-    * [Movie Trailers' Index](#movie-trailers'-index)
+    * [Movie Trailers' Index](#movie-trailers-index)
     * [Genre Show](#genre-show)
     * [Upcoming Features](#upcoming-features)
 
@@ -43,7 +43,7 @@ The future directions for Kineto are to enable users to view the movie trailers 
 
 ---
 
-### Movie Trailers' Index
+### Movie Trailers Index
 
 ![index](https://i.pinimg.com/originals/02/ff/7f/02ff7f732ad506b37788c046343b8e03.gif)
 
