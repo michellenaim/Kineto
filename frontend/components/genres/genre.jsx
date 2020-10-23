@@ -54,7 +54,7 @@ class Genre extends React.Component {
 
   componentDidMount() {
     this.props.fetchGenre(this.props.genreId);
-    // this.props.fetchMoviesGenres();
+    this.props.fetchMoviesGenres();
   }
 
   componentDidUpdate(prevProps){
@@ -66,6 +66,10 @@ class Genre extends React.Component {
   render() {
     
     if (!this.props.genre || this.props.movies.length < 1) {
+      return null;
+    }
+
+    if (this.props.moviesgenres && Object.values(this.props.moviesgenres).length < 1) {
       return null;
     }
     
