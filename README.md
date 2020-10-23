@@ -1,5 +1,9 @@
 # Kineto
 
+<p align="center">
+  <img src="https://github.com/michellenaim/Kineto/blob/master/app/assets/images/Kineto_logo.png" />
+</p>
+
 ###### [Live Site](https://kineto-app.herokuapp.com/#/)
 
 ## Table of Contents
