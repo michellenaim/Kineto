@@ -1,4 +1,4 @@
-# Kineto <p align="right">
+<p align="center">
   <img src="https://github.com/michellenaim/Kineto/blob/master/app/assets/images/Kineto_logo.png" />
 </p>
 
