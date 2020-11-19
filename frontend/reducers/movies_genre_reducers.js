@@ -6,7 +6,6 @@ const moviesGenreReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_MOVIES_GENRES:
-            // debugger
             nextState = action.moviesgenres;
             return nextState;
         default:

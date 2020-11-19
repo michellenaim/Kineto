@@ -14,7 +14,3 @@ export const selectMoviesByGenre = (state, genreId) => {
   return newArray
 
 };
-
-export default selectMoviesByGenre
-
-//where do we get movieId from?

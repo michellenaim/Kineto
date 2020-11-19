@@ -53,8 +53,9 @@ class Genre extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchGenre(this.props.genreId);
-    this.props.fetchMoviesGenres();
+    if (this.props.movies) {
+      this.props.fetchMoviesGenres();
+    }
   }
 
   componentDidUpdate(prevProps){
@@ -73,7 +74,6 @@ class Genre extends React.Component {
       return null;
     }
     
-    // debugger
     const { genre, movies } = this.props;
 
     // const genreMovies = movies.filter((movie) =>

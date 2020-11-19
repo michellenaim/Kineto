@@ -17,10 +17,12 @@ export const receiveMovie = (movie) => ({
   movie,
 });
 
-export const receiveMoviesGenres = (moviesgenres) => ({
+export const receiveMoviesGenres = (moviesgenres) => {
+  return{
   type: RECEIVE_ALL_MOVIES_GENRES,
   moviesgenres
-})
+  }
+}
 
 // export const clearSearch = () => ({
 //   type: CLEAR_SEARCH,

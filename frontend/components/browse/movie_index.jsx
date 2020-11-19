@@ -1,5 +1,5 @@
 import React from "react";
-import MovieMainContainer from "../main_movie/movie_main_container";
+import MovieMain from "../main_movie/movie_main";
 import GenreContainer from "../genres/genre_container";
 
 class MovieIndex extends React.Component {
@@ -19,9 +19,9 @@ class MovieIndex extends React.Component {
   
     return (
       <div>
-        <MovieMainContainer />
+        <MovieMain key={this.props.movies.id} movies={this.props.movies} fetchMovies={this.props.fetchMovies}/>
         {this.props.genres.map((genre) => {
-          return <GenreContainer genreId={genre.id} />
+          return <GenreContainer genreId={genre.id} genres={this.props.genres} fetchGenres={this.props.fetchGenres}/>
         })}
       </div>
     );
