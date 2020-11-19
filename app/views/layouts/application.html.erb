@@ -9,6 +9,15 @@
     <script type="text/javascript">
         window.kinetoLogo = "<%= image_url('Kineto_logo.png') %>";
      </script>
+
+    <meta name="description" content="Kineto App" />
+    <meta name="title" property="og:title" content="Kineto" />
+    <meta property="og:type" content="Website" />
+    <meta name="image" property="og:image" content="<%= image_url('Kineto_logo.png') %>" />
+    <meta name="description" property="og:description" content="A Netflix clone that allows users to watch movie trailers on-demand built with Ruby on Rails and React/Redux" />
+    <meta name="author" content="Michelle Naim" />
+     
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
