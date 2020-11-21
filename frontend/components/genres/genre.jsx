@@ -30,7 +30,7 @@ function GenreItem({ movie, selected, ...props }) {
       </Link>
     </div>
   );
-    // debugger
+  
   const image = (
       <img width="250" src={movie.photoURL} />
   );
@@ -49,6 +49,9 @@ class Genre extends React.Component {
     // debugger
     this.state = {
       preview: null,
+      prevDisable: true,
+      nextDisable:
+      this.refs && this.refs.offsetWidth >= this.refs.scrollWidth ? true : false
     };
   }
 
@@ -56,6 +59,7 @@ class Genre extends React.Component {
     if (this.props.movies) {
       this.props.fetchMoviesGenres();
     }
+    this.checkButtons(this.refs.offsetWidth, this.refs.scrollWidth)
   }
 
   componentDidUpdate(prevProps){
@@ -63,6 +67,14 @@ class Genre extends React.Component {
       this.props.fetchGenre(this.props.genreId);
     }
   }
+
+   checkButtons(offsetWidthValue, scrollWidthValue){
+    this.setState({
+    prevDisable: this.refs.scrollLeft <= 0 ? true : false,
+    nextDisable:
+    this.refs.scrollLeft + offsetWidthValue >= scrollWidthValue ? true : false
+    });
+  };
 
   render() {
     
@@ -76,10 +88,12 @@ class Genre extends React.Component {
     
     const { genre, movies } = this.props;
 
+    const offsetWidthValue = this.refs.offsetWidth;
+    const scrollWidthValue = this.refs.scrollWidth;
+
     // const genreMovies = movies.filter((movie) =>
     //   new Set(genre.movieIds).has(movie.id)
     // );
-    // debugger
 
     return (
       <div className="genre">
