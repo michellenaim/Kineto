@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { fetchGenre, fetchGenres} from "../../actions/genre_actions";
+import {fetchGenre} from "../../actions/genre_actions";
 import { fetchMoviesGenres } from "../../actions/movie_actions"
-import {selectMoviesByGenre} from "../../reducers/selector"
+import selectMoviesByGenre from "../../reducers/selector"
 import Genre from "./genre";
 
 const mapStateToProps = (state, ownProps) => {

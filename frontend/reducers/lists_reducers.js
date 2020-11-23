@@ -1,16 +1,22 @@
-import { RECEIVE_LISTS, REMOVE_LIST_MOVIE } from "../../actions/list_actions";
+import { RECEIVE_LISTS, REMOVE_LIST_MOVIE } from "../actions/list_actions";
 
-const userReducer = (oldState = {}, action) => {
-    Object.freeze(oldState);
+const listsReducer = (state = {}, action) => {
+    Object.freeze(state);
+    let nextState = Object.assign({}, state);
+    
     switch (action.type) {
         case RECEIVE_LISTS:
-            return Object.assign({}, oldState, action.watchlist);
-        case REMOVE_LIST_ITEM:
-            return Object.assign({}, Object.values(oldState).filter(
-                (id) => id.movie_id !== parseInt(action.watchlistId.id)));
+            nextState = action.lists;
+            return nextState;
+        case RECEIVE_MOVIE:
+            nextState[action.list.id] = action.list;
+            return nextState;
+        case REMOVE_LIST_MOVIE:
+            delete nextState[action.list.id];
+            return nextState;
         default:
-            return oldState;
+            return state;
     }
 };
 
-export default userReducer;
+export default listsReducer;

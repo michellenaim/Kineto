@@ -1,22 +1,22 @@
 export const addToList = (movieId) => {
     return $.ajax({
-        url: `/api/users/:user_id/list`,
-        method: "POST",
+      method: "POST",
+      url: `/api/users/:user_id/list`,
       data: { list: {movie_id: movieId} }
     });
 }
 
 export const fetchList = (userId) => {
-        return $.ajax({
-            url: `/api/users/${userId}/lists`,
-            method: "GET",
-        });
+    return $.ajax({
+      method: "GET",
+      url: `/api/users/${userId}/lists`,
+    });
 }
 
 
-export const deleteListItem = (listId) => {
+export const deleteListMovie = (listId) => {
   return $.ajax({
-      url: `api/users/:user_id/lists/${listId}`,
-      method: "DELETE",
+    method: "DELETE",
+    url: `api/users/:user_id/lists/${listId}`,
   });
 };

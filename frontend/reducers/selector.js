@@ -1,4 +1,4 @@
-export const selectMoviesByGenre = (state, genreId) => {
+const selectMoviesByGenre = (state, genreId) => {
   const moviesgenres =  Object.values(state.entities.moviesgenres).filter((moviesgenre) => {
       return moviesgenre.genre_id === Number(genreId)
   })
@@ -14,3 +14,6 @@ export const selectMoviesByGenre = (state, genreId) => {
   return newArray
 
 };
+
+export default selectMoviesByGenre;
+

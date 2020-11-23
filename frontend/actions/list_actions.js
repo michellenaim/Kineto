@@ -9,9 +9,9 @@ const receiveListMovie = (listMovie) => ({
     listMovie,
 });
 
-const receiveList = (lists) => ({
+const receiveList = (list) => ({
     type: RECEIVE_LISTS,
-    lists
+    list
 });
 
 const removeListMovie = (listId) => ({
@@ -33,6 +33,6 @@ export const addToList = (listMovie) => (dispatch) => {
     );
 };
 
-export const deleteListItem = (listId) => (dispatch) => {
-    return ListApiUtil.deleteListItem(listId).then((listId) => dispatch(removeListMovie(listId)));
+export const deleteListMovie = (listId) => (dispatch) => {
+    return ListApiUtil.deleteListMovie(listId).then((listId) => dispatch(removeListMovie(listId)));
 };
