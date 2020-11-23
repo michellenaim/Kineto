@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_one :list,
+    has_many :lists,
         primary_key: :id,
         foreign_key: :user_id,
         class_name: :List
