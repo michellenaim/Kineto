@@ -7,6 +7,7 @@ export const addToList = (movieId) => {
 }
 
 export const fetchList = (userId) => {
+  debugger
     return $.ajax({
       method: "GET",
       url: `/api/users/${userId}/lists`,

@@ -9,7 +9,7 @@ const entitiesReducer = combineReducers({
   movies: moviesReducer,
   genres: genresReducer,
   moviesgenres: moviesGenreReducer,
-  lists: listsReducer
+  lists: listsReducer,
   // search: searchReducer,
 });
 

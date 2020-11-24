@@ -151,6 +151,8 @@ case Rails.env
 #--------------- LIST  ---------------------------------------------
 
       list1 = List.create(user_id: 1, movie_id: 2)
+      list2 = List.create(user_id: 1, movie_id: 4)
+
       
 
 

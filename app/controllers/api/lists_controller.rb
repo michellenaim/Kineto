@@ -1,5 +1,5 @@
 class Api::ListsController < ApplicationController
-
+skip_before_action :verify_authenticity_token
     def show
         @list = List.find(params[:id])
         render :show
@@ -16,9 +16,9 @@ class Api::ListsController < ApplicationController
     end
 
     def destroy
-       @list = List.find_by(user_id:[current_user.id], movie_id:[params[:id]])
+       @list = current_user.lists.find_by(movie_id: params[:id])
        if @list.destroy
-            render json: { id: params[:id]}
+            render :show
        else
             render @list.errors.full_messages, status: 404
        end
@@ -27,6 +27,6 @@ class Api::ListsController < ApplicationController
     private
 
     def list_params
-        params.require(:list).permit(:movie_id)
+        params.require(:list).permit(:user_id, :movie_id)
     end
 end

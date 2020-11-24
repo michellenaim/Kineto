@@ -10,7 +10,7 @@ const receiveListMovie = (listMovie) => ({
 });
 
 const receiveList = (list) => ({
-    type: RECEIVE_LISTS,
+    type: RECEIVE_LIST,
     list
 });
 
@@ -22,6 +22,7 @@ const removeListMovie = (listId) => ({
 //-----------thunk actions --------------
 
 export const fetchList = () => (dispatch) => {
+    debugger
     return ListApiUtil.fetchList().then((list) => {
         return dispatch(receiveList(list));
     });

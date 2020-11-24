@@ -7,6 +7,7 @@ import LogInFormContainer from "./session/login_form_container";
 import HomeContainer from "./home/home_container";
 import MovieIndexContainer from "./browse/movie_index_container";
 import GenreContainer from "./genres/genre_container";
+import ListContainer from "./list/list_container"
 
 export default () => (
   <React.Fragment>
@@ -17,6 +18,7 @@ export default () => (
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <ProtectedRoute path="/browse" component={MovieIndexContainer} />
       <ProtectedRoute path="/genres/:genreId" component={GenreContainer} />
+      <ProtectedRoute path="/users/:userId/lists" component={ListContainer} />
       <ProtectedRoute path="/movies/:movieId" />
       <Redirect from="/*" to="/" />
     </Switch>
