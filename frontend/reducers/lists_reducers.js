@@ -3,7 +3,7 @@ import { RECEIVE_LIST, RECEIVE_LIST_MOVIE, REMOVE_LIST_MOVIE } from "../actions/
 const listsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_LIST:
             nextState = action.lists;

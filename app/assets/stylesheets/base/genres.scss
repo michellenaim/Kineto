@@ -104,11 +104,12 @@ box-shadow: 0 0 6.1px 0.9px grey;
 padding: 5px;
 cursor: pointer;
 width: 20px;
-height: 20px;
+height: 170px;
 background: grey;
 text-align: center;
 color: white;
-border-radius: 50%;
+opacity: 0.6;
+font-size: 25px;
 }
 .prev {
 left: 1rem;

@@ -22,7 +22,7 @@ const removeListMovie = (listId) => ({
 //-----------thunk actions --------------
 
 export const fetchList = () => (dispatch) => {
-    debugger
+    // debugger
     return ListApiUtil.fetchList().then((list) => {
         return dispatch(receiveList(list));
     });

@@ -136,6 +136,12 @@ case Rails.env
 #--------------- MOVIE_GENRES LINK  --------------------------------
 
     MovieGenre.create(movie_id: silence_of_the_lambs.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: the_irishman.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: sleepless_in_seattle.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: murder_mystery.id, genre_id: thriller.id)
+
+
     MovieGenre.create(movie_id: enola_holmes.id, genre_id: mystery.id)
     MovieGenre.create(movie_id: enola_holmes.id, genre_id: drama.id)
     MovieGenre.create(movie_id: the_irishman.id, genre_id: drama.id)
@@ -152,7 +158,7 @@ case Rails.env
 
       list1 = List.create(user_id: 1, movie_id: 2)
       list2 = List.create(user_id: 1, movie_id: 4)
-
+      list3 = List.create(user_id: 1, movie_id: 3)
       
 
 

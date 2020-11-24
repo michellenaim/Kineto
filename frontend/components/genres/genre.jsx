@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Use React Ref?
+// Easier to use bootstrap
+
 function GenreItem({ movie, selected, ...props }) {
   
   const preview = (
@@ -30,7 +33,7 @@ function GenreItem({ movie, selected, ...props }) {
       </Link>
     </div>
   );
-  
+
   const image = (
       <img width="250" src={movie.photoURL} />
   );
@@ -98,6 +101,34 @@ class Genre extends React.Component {
     return (
       <div className="genre">
         <p className="genre-title">{genre.name}</p>
+        <div
+        className="slider-container"
+        ref={el => {
+          this.refs = el;
+        }}
+        >
+        <div className="slider-wrapper">{this.props.children}</div>
+        <div
+          className={`btn prev ${this.state.prevDisable ? "disable" : ""}`}
+          disabled={this.state.prevDisable}
+          onClick={() => {
+          this.refs.scrollLeft -= offsetWidthValue / 2;
+          this.checkButtons(offsetWidthValue, scrollWidthValue);
+          }}
+          >
+          {"<"}
+        </div>
+        <div
+          className={`btn next ${this.state.nextDisable ? "disable" : ""}`}
+          disabled={this.state.nextDisable}
+          onClick={() => {
+          this.refs.scrollLeft += offsetWidthValue / 2;
+          this.checkButtons(offsetWidthValue, scrollWidthValue);
+          }}
+          >
+          {">"}
+        </div>
+        </div>
         <div className="movies">
           {movies.map((movie) => (
             <GenreItem

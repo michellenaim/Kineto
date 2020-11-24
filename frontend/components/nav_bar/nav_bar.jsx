@@ -11,6 +11,7 @@ class NavBar extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     const display = this.props.currentUser ? (
       <div className="navloggedin">
         <div className="nav-left">
