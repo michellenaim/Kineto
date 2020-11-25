@@ -1,5 +1,10 @@
 class Api::ListsController < ApplicationController
 skip_before_action :verify_authenticity_token
+    def index
+        @lists = List.where(user_id: current_user.id)
+        render :index
+    end
+
     def show
         @list = List.find(params[:id])
         render :show
@@ -16,7 +21,7 @@ skip_before_action :verify_authenticity_token
     end
 
     def destroy
-       @list = current_user.lists.find_by(movie_id: params[:id])
+       @list = current_user.lists.find_by(id: params[:id])
        if @list.destroy
             render :show
        else

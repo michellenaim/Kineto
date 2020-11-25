@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         resources :genres, only: [:index, :show] do
             resources :movies, only: [:index]
         end
-        resources :lists, only: [:create,:show,:destroy]
+        resources :lists, only: [:index,:create,:show,:destroy]
       end
 
 

@@ -1,5 +1,3 @@
-json.extract! @list, :id, :user_id
-
 json.set! @list.movie_id do
     json.extract @list.movie, :id, :title, :description, :year, :rating, :runtime
     json.movieURL url_for(@list.movie.url) if @list.movie.url.attached?

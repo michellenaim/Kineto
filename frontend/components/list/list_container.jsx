@@ -1,16 +1,17 @@
 import { connect } from "react-redux";
-import {fetchList} from "../../actions/list_actions";
+import {fetchLists} from "../../actions/list_actions";
 import List from "./list";
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
   return ({
-    list: state.entities.lists
+    lists: Object.values(state.entities.lists), 
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchList: () => dispatch(fetchList())
+    fetchLists: () => dispatch(fetchLists()),
   };
 };
 

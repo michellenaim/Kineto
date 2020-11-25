@@ -11,7 +11,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     const display = this.props.currentUser ? (
       <div className="navloggedin">
         <div className="nav-left">
@@ -34,7 +33,7 @@ class NavBar extends React.Component {
               })}
             </ul>
           </div>
-          <p className="nav-title"><Link to={`users/${currentUser.id}/lists`}>My List</Link></p>
+          <p className="nav-title"><Link to={`users/${this.props.currentUser.id}/lists`}>My List</Link></p>
         </div>
         <div className="nav-right">
           <link
