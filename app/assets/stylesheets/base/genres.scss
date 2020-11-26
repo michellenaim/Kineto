@@ -8,7 +8,6 @@
   top: 0;
   background-color: black;
   color: white;
-  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,19 +19,27 @@
   font-size: 30px;
   padding: 10px;
   padding-left: 30px;
+  padding-bottom: 20px;
 }
 
 .movies {
-  padding: 20px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    transition: transform 450ms;
+    overflow: -moz-hidden-unscrollable;
+    overflow-y: hidden;
+    width: 90vw;
+    margin: 0 auto;
+  
 }
+
 
 .genre-item {
   width: 300px;
   height: 200px;
+  flex: 0 0 20.0%;
 }
 
 .movie-video {
@@ -75,58 +82,40 @@
 }
 
 
-
-
-.parent {
-width: 85%;
-overflow: hidden;
-margin: auto;
-padding: 1rem;
-}
-.slider-container {
- /* if you want to have a scrollbar, you can add overflow here */ 
-overflow-x: hidden;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0rem 2rem;
-padding: 3px;
- scroll-behavior: smooth;
-}
-.slider-wrapper {
-display: flex;
-align-items: center;
-width: 100%;
-}
 .btn {
-position: absolute;
-box-shadow: 0 0 6.1px 0.9px grey;
-padding: 5px;
-cursor: pointer;
-width: 20px;
-height: 170px;
-background: grey;
-text-align: center;
-color: white;
-opacity: 0.6;
-font-size: 25px;
-}
-.prev {
-left: 1rem;
+  position: absolute;
+  box-shadow: 0 0 6.1px 0.9px grey;
+  padding: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 132px;
+  background: grey;
+  color: white;
+  opacity: 0.3;
+  font-size: 25px;
+  z-index: 5;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 125px;
 }
 .next {
-right: 1rem;
-}
-.disable {
-opacity: 0.5;
- pointer-events: none;
-}
-.child {
-padding: 5px 20px;
-background: #59eb97;
-text-align: center;
-width: 100%;
-margin-right: 10px;
-border-radius: 21px;
+  right: 1rem;
+  transform: translateY(45%);
 }
 
+.prev {
+  left: 1rem;
+  transform: translateY(45%);
+}
+
+.list{
+  padding: 20px;
+  padding-left: 40px;
+  padding-top: 40px;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

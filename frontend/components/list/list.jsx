@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import GenreItem from "../genres/genre"
 
 function ListItem({ movie, selected, ...props }) {
   
@@ -24,7 +23,7 @@ function ListItem({ movie, selected, ...props }) {
           </div>
           <div>
             <div className="list-button">
-              <i className="fas fa-plus-circle"></i>
+              <i className="fas fa-check-circle"></i>
             </div>
           </div>
         </div>
@@ -64,7 +63,7 @@ class List extends React.Component {
         return (
         <div className="my-list">
           <div className="genre">
-            <div className="movies">
+            <div className="list">
               {lists.map((list) => (
                 <ListItem
                   key={list.id}

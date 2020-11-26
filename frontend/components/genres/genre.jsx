@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Use React Ref?
-// Easier to use bootstrap
-
 function GenreItem({ movie, selected, ...props }) {
   
   const preview = (
@@ -49,20 +46,17 @@ function GenreItem({ movie, selected, ...props }) {
 class Genre extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
     this.state = {
       preview: null,
-      prevDisable: true,
-      nextDisable:
-      this.refs && this.refs.offsetWidth >= this.refs.scrollWidth ? true : false
+      left: 0
     };
+    this.slider = React.createRef()
   }
 
   componentDidMount() {
     if (this.props.movies) {
       this.props.fetchMoviesGenres();
     }
-    this.checkButtons(this.refs.offsetWidth, this.refs.scrollWidth)
   }
 
   componentDidUpdate(prevProps){
@@ -71,13 +65,16 @@ class Genre extends React.Component {
     }
   }
 
-   checkButtons(offsetWidthValue, scrollWidthValue){
-    this.setState({
-    prevDisable: this.refs.scrollLeft <= 0 ? true : false,
-    nextDisable:
-    this.refs.scrollLeft + offsetWidthValue >= scrollWidthValue ? true : false
-    });
-  };
+   scroll(direction){
+        let offset;
+        direction === 'left' ? offset = -800 : offset = 800;
+        let width = this.slider.current.scrollWidth;
+        let newPosition = this.slider.current.scrollLeft + offset ;
+        let overflow = newPosition === width;
+        if(overflow) this.slider.current.scrollTo(0,0);
+        if((newPosition < 8 )&&(direction === 'left')) this.slider.current.scrollTo(width,0);
+          this.slider.current.scrollBy(offset ,0)  
+    }
 
   render() {
     
@@ -91,9 +88,6 @@ class Genre extends React.Component {
     
     const { genre, movies } = this.props;
 
-    const offsetWidthValue = this.refs.offsetWidth;
-    const scrollWidthValue = this.refs.scrollWidth;
-
     // const genreMovies = movies.filter((movie) =>
     //   new Set(genre.movieIds).has(movie.id)
     // );
@@ -101,35 +95,8 @@ class Genre extends React.Component {
     return (
       <div className="genre">
         <p className="genre-title">{genre.name}</p>
-        <div
-        className="slider-container"
-        ref={el => {
-          this.refs = el;
-        }}
-        >
-        <div className="slider-wrapper">{this.props.children}</div>
-        <div
-          className={`btn prev ${this.state.prevDisable ? "disable" : ""}`}
-          disabled={this.state.prevDisable}
-          onClick={() => {
-          this.refs.scrollLeft -= offsetWidthValue / 2;
-          this.checkButtons(offsetWidthValue, scrollWidthValue);
-          }}
-          >
-          {"<"}
-        </div>
-        <div
-          className={`btn next ${this.state.nextDisable ? "disable" : ""}`}
-          disabled={this.state.nextDisable}
-          onClick={() => {
-          this.refs.scrollLeft += offsetWidthValue / 2;
-          this.checkButtons(offsetWidthValue, scrollWidthValue);
-          }}
-          >
-          {">"}
-        </div>
-        </div>
-        <div className="movies">
+    <div className="btn prev" onClick={() => this.scroll('left')}>{"<"}</div>
+        <div className="movies" ref={this.slider}>
           {movies.map((movie) => (
             <GenreItem
               key={movie.id}
@@ -140,6 +107,7 @@ class Genre extends React.Component {
             />
           ))}
         </div>
+         <div className="btn next" onClick={() => this.scroll('right')}>{">"}</div> 
       </div>
     );
   }
