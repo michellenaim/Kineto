@@ -1,47 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-function GenreItem({ movie, selected, ...props }) {
-  
-  const preview = (
-    <div className="movie-item">
-      <Link to={`/movies/${movie.id}`}>
-        <video
-          className="movie-video"
-          autoPlay
-          height="100%"
-          key={movie.movieURL}
-        >
-          <source src={movie.movieURL} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        <div className="movie-info">
-          <div className="movie-info-left">
-            <p className="movie-title">{movie.title}</p>
-            <p className="movie-runtime">{movie.runtime}</p>
-          </div>
-          <div>
-            <div className="list-button">
-              <i className="fas fa-plus-circle"></i>
-            </div>
-          </div>
-        </div>
-      </Link>
-    </div>
-  );
-
-  const image = (
-      <img width="250" src={movie.photoURL} />
-  );
-
-  return (
-      <div className="genre-item" onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
-        {selected ? preview : image}
-    </div>
-
-  )
-}
+import GenreItem from "./genre_item"
 
 class Genre extends React.Component {
   constructor(props) {
@@ -57,6 +15,7 @@ class Genre extends React.Component {
     if (this.props.movies) {
       this.props.fetchMoviesGenres();
     }
+    this.props.fetchLists()
   }
 
   componentDidUpdate(prevProps){
@@ -104,6 +63,10 @@ class Genre extends React.Component {
               selected={this.state.preview === movie.id}
               onMouseEnter={() => this.setState({ preview: movie.id })}
               onMouseLeave={() => this.setState({ preview: null })}
+              deleteListMovie={this.props.deleteListMovie}
+              addToList={this.props.addToList}
+              currentUser={this.props.currentUser}
+              lists={this.props.lists}
             />
           ))}
         </div>

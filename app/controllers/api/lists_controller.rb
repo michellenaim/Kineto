@@ -21,7 +21,7 @@ skip_before_action :verify_authenticity_token
     end
 
     def destroy
-       @list = current_user.lists.find_by(id: params[:id])
+       @list = List.find_by(id: params[:id])
        if @list.destroy
             render :show
        else

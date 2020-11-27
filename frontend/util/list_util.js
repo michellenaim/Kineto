@@ -1,8 +1,8 @@
-export const addToList = (movieId) => {
+export const addToList = (list) => {
     return $.ajax({
       method: "POST",
       url: `/api/users/:user_id/list`,
-      data: { list: {movie_id: movieId} }
+      data: { list }
     });
 }
 
@@ -18,6 +18,6 @@ export const fetchLists = () => {
 export const deleteListMovie = (listId) => {
   return $.ajax({
     method: "DELETE",
-    url: `api/users/:user_id/lists/${listId}`,
+    url: `api/users/:user_id/lists/${listId}`
   });
 };

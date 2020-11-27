@@ -32,9 +32,8 @@
     overflow-y: hidden;
     width: 90vw;
     margin: 0 auto;
-  
+    scrollbar-width: none;
 }
-
 
 .genre-item {
   width: 300px;
@@ -79,6 +78,12 @@
   font-size: 30px;
   margin-right: 10px;
   z-index: 10;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  bottom: 10px;
 }
 
 
