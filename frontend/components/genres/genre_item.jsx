@@ -20,19 +20,18 @@ class GenreItem extends React.Component {
     // && currentUser.id === userId
      
      if (addMovieToList) {
-         debugger
          lists.forEach((list) => {
              if (currentUser.id === list.userId && list.movieId === movie.id){
                 deleteListMovie(list.id);
              } 
          })
-       this.setState({ addMovieToList: false });
+       this.setState({ addMovieToList: false })
      } else {
          addToList({
              user_id: this.props.currentUser.id,
              movie_id: movie.id
-         });
-       this.setState({ addMovieToList: true });
+         })
+       this.setState({ addMovieToList: true })
      }
    }
 
