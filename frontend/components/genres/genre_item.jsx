@@ -5,39 +5,30 @@ class GenreItem extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      addMovieToList: null,
-    };
+    // this.state = {
+    //     addMovieToList: false
+    // }
     this.handleList = this.handleList.bind(this)
   }
 
    handleList(){
-     const { addToList, movie, deleteListMovie, lists, currentUser } = this.props;
-     const { addMovieToList } = this.state;
 
-    //  iterate through all lists and check
-    // lists.movieId === movie.id
-    // && currentUser.id === userId
-     
-     if (addMovieToList) {
-         lists.forEach((list) => {
-             if (currentUser.id === list.userId && list.movieId === movie.id){
-                deleteListMovie(list.id);
-             } 
-         })
-       this.setState({ addMovieToList: false })
-     } else {
-         addToList({
-             user_id: this.props.currentUser.id,
-             movie_id: movie.id
-         })
-       this.setState({ addMovieToList: true })
-     }
+        const { addToList, movie, deleteListMovie, lists, currentUser } = this.props;
+        const list = lists.find(list => list.movie_id === movie.id)
+
+        if (list){
+            deleteListMovie(list.id)
+        } else {
+            addToList({
+                user_id: currentUser.id,
+                movie_id: movie.id
+            })
+        }
    }
 
   render(){
-        const { movie, selected } = this.props;
-        const {addMovieToList} = this.state;
+        const { movie, selected, lists} = this.props;   
+        const list = lists.find(list => list.movie_id === movie.id)
         const preview = (
             <div className="movie-item">
             <Link to={`/movies/${movie.id}`}>
@@ -60,7 +51,7 @@ class GenreItem extends React.Component {
             </Link>
                     <div className="list-button">
                         <button onClick={this.handleList}>
-                            {addMovieToList ? (
+                            {!list ? (
                             <>
                                 <i className="fas fa-plus-circle"></i>
                             </>

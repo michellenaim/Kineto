@@ -2,7 +2,7 @@ import * as ListApiUtil from "../util/list_util";
 
 export const RECEIVE_LIST_MOVIE = "RECEIVE_LIST_MOVIE";
 export const RECEIVE_LISTS = "RECEIVE_LISTS";
-export const REMOVE_LIST_MOVIE = "RECEIVE_LIST_MOVIE"
+export const REMOVE_LIST_MOVIE = "REMOVE_LIST_MOVIE"
 
 const receiveListMovie = (list) => ({
     type: RECEIVE_LIST_MOVIE,
@@ -35,5 +35,7 @@ export const addToList = (listMovie) => (dispatch) => {
 };
 
 export const deleteListMovie = (listId) => (dispatch) => {
-    return ListApiUtil.deleteListMovie(listId).then((list) => dispatch(removeListMovie(list)));
+    return ListApiUtil.deleteListMovie(listId).then((list) => {
+        dispatch(removeListMovie(list))
+    });
 };

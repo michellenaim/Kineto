@@ -11,26 +11,39 @@ class List extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchLists()
+      this.props.fetchMovies()
+      this.props.fetchLists()
     }
 
     render(){
-
-        const { lists } = this.props;
-
+        const { lists, movies } = this.props;
+        let noList;
+        if (!this.props.lists.length) {
+          noList = (
+          <p> You haven't added any movies to your list yet!</p>
+        )}
         return (
         <div className="my-list">
-          <div className="genre">
+           <div className="genre">
             <div className="list">
-              {lists.map((list) => (
-                <GenreItem
-                  key={list.id}
-                  movie={list}
-                  selected={this.state.preview === list.id}
-                  onMouseEnter={() => this.setState({ preview: list.id })}
-                  onMouseLeave={() => this.setState({ preview: null })}
-                />
-              ))}
+              {movies.map((movie) => {
+                return lists.map((list) => {
+                  if (movie.id === list.movie_id){
+                    return (
+                    <GenreItem
+                      key={list.id}
+                      movie={movie}
+                      selected={this.state.preview === list.id}
+                      // isFavorite={lists.find(l => l.movie_id === list.id)}
+                      deleteListMovie={this.props.deleteListMovie}
+                      onMouseEnter={() => this.setState({ preview: list.id })}
+                      onMouseLeave={() => this.setState({ preview: null })}
+                      lists={lists}
+                    />
+                    )}
+                })
+              })}
+              {noList}
             </div>
           </div>
         </div>

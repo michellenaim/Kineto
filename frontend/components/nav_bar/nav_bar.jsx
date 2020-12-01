@@ -33,7 +33,7 @@ class NavBar extends React.Component {
               })}
             </ul>
           </div>
-          <p className="nav-title"><Link to={`users/${this.props.currentUser.id}/lists`}>My List</Link></p>
+          <p className="nav-title"><Link to={`/users/${this.props.currentUser.id}/lists`}>My List</Link></p>
         </div>
         <div className="nav-right">
           <link

@@ -9,10 +9,11 @@ const listsReducer = (state = {}, action) => {
             nextState = action.lists;
             return nextState;
         case RECEIVE_LIST_MOVIE:
-            nextState[action.list.id] = action.list;
+            const idx = Object.keys(action.list)[0];
+            nextState[idx] = action.list[idx];
             return nextState;
         case REMOVE_LIST_MOVIE:
-            delete nextState[action.list.id];
+            delete nextState[Object.keys(action.list)[0]];
             return nextState;
         default:
             return state;
