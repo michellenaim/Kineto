@@ -16,3 +16,5 @@ const searchReducer = (state = {}, action) => {
 };
 
 export default searchReducer;
+
+// check if reducer is needed. Maybe do everything in component?
