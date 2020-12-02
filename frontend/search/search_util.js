@@ -4,3 +4,5 @@ export const fetchSearch = (query) => {
     url: `/api/videos/search/${query}`,
   });
 };
+
+// check if util is needed
