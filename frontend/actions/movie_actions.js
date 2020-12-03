@@ -1,11 +1,11 @@
 import * as APIUtil from "../util/movie_util";
-// import * as SearchUtil from "../search/search_util";
+import * as SearchUtil from "../search/search_util";
 
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
 export const RECEIVE_MOVIES_BY_GENRE = "RECEIVE_MOVIES_BY_GENRE"
 export const RECEIVE_ALL_MOVIES_GENRES = "RECEIVE_ALL_MOVIES_GENRES"
-// export const CLEAR_SEARCH = "CLEAR_SEARCH";
+export const CLEAR_SEARCH = "CLEAR_SEARCH";
 
 export const receiveMovies = (movies) => ({
   type: RECEIVE_MOVIES,
@@ -24,9 +24,9 @@ export const receiveMoviesGenres = (moviesgenres) => {
   }
 }
 
-// export const clearSearch = () => ({
-//   type: CLEAR_SEARCH,
-// });
+export const clearSearch = () => ({
+  type: CLEAR_SEARCH,
+});
 
 export const fetchMovies = () => (dispatch) => {
   return APIUtil.fetchMovies().then((movies) => {
@@ -47,8 +47,8 @@ export const fetchMoviesGenres = () => (dispatch) => {
   })
 }
 
-// export const search = (search) => (dispatch) => {
-//   return SearchUtil.fetchSearch(search).then((movies) => {
-//     return dispatch(receiveMovies(movies));
-//   });
-// };
+export const search = (search) => (dispatch) => {
+  return SearchUtil.fetchSearch(search).then((movies) => {
+    return dispatch(receiveMovies(movies));
+  });
+};

@@ -4,13 +4,47 @@ import { Link } from "react-router-dom";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClickOpen = this.handleClickOpen.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.submitSearch = this.submitSearch.bind(this);
+    this.state = {
+      searchBarOpen: false,
+    };
   }
 
   componentDidMount() {
     this.props.fetchGenres();
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  handleClickOutside(event){
+    if (this.refs.search && !this.refs.search.contains(event.target)){
+      this.setState({ searchBarOpen: false });
+    }
+  }
+
+  handleClickOpen() {
+    if(this.state.searchBarOpen === false){
+      this.refs.input.focus()
+      this.setState({ searchBarOpen: true });
+    }
+  }
+
+  submitSearch(e){
+    if(this.state.searchBarOpen === true && e.key === 'Enter'){
+      this.props.clearSearch();
+      this.props.search(e.target.value)
+      this.forceUpdate()
+      if(this.props.history.location.pathname !== './search'){     
+        this.props.history.push("/search");
+      }
+    }
   }
 
   render() {
+
+    const { searchBarOpen } = this.state;
+
     const display = this.props.currentUser ? (
       <div className="navloggedin">
         <div className="nav-left">
@@ -36,13 +70,27 @@ class NavBar extends React.Component {
           <p className="nav-title"><Link to={`/users/${this.props.currentUser.id}/lists`}>My List</Link></p>
         </div>
         <div className="nav-right">
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-          ></link>
-          <button type="submit" className="search-icon">
-            <i className="fa fa-search"></i>
-          </button>
+          <nav className="sub-nav">
+          <div className="search-container">
+            <div className="search" ref="search">
+              <input
+                onKeyUp={this.submitSearch}
+                className={searchBarOpen ? "toggle input" : "input"}
+                type="text"
+                placeholder="Movie titles"
+                autoFocus
+                ref='input'
+              ></input>
+              <i
+                onClick={this.handleClickOpen}
+                className={
+                  searchBarOpen
+                    ? "fas fa-search active sub-nav-logo"
+                    : "fas fa-search sub-nav-logo"
+                }
+              ></i>
+            </div>
+          </div>
           <p className="email-nav">{this.props.currentUser.email}</p>
           <button
             className="logoutbtn"
@@ -52,6 +100,7 @@ class NavBar extends React.Component {
           >
             Log Out
           </button>
+        </nav>
         </div>
       </div>
     ) : (
@@ -71,7 +120,6 @@ class NavBar extends React.Component {
         </div>
       </div>
     );
-
     return <header className="nav-bar">{display}</header>;
   }
 }

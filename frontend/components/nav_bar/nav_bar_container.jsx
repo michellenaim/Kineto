@@ -13,6 +13,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   fetchGenres: () => dispatch(fetchGenres()),
+  search: (searchItem) => dispatch(search(searchItem)),
+  clearSearch: () => dispatch(clearSearch())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

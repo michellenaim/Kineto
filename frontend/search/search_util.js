@@ -1,8 +1,7 @@
-export const fetchSearch = (query) => {
+export const fetchSearch = (search) => {
   return $.ajax({
     method: "GET",
-    url: `/api/videos/search/${query}`,
+    url: "api/movies",
+    data:{search}
   });
 };
-
-// check if util is needed
