@@ -24,9 +24,9 @@ export const receiveMoviesGenres = (moviesgenres) => {
   }
 }
 
-export const clearSearch = () => ({
-  type: CLEAR_SEARCH,
-});
+// export const clearSearch = () => ({
+//   type: CLEAR_SEARCH,
+// });
 
 export const fetchMovies = () => (dispatch) => {
   return APIUtil.fetchMovies().then((movies) => {
@@ -45,10 +45,10 @@ export const fetchMoviesGenres = () => (dispatch) => {
   return APIUtil.fetchMoviesGenres().then((moviesgenres) => {
     dispatch(receiveMoviesGenres(moviesgenres))
   })
-}
+};
 
-export const search = (search) => (dispatch) => {
-  return SearchUtil.fetchSearch(search).then((movies) => {
-    return dispatch(receiveMovies(movies));
-  });
+export const searchByName = (name) => (dispatch) => {
+    return SearchUtil.searchByName(name) .then((movies)=> {
+      dispatch(receiveMovies(movies));
+    });
 };

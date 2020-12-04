@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {editSearchRoute} from "../../util/search_util"
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    
     this.handleClickOpen = this.handleClickOpen.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.submitSearch = this.submitSearch.bind(this);
+    this.searchQuery = this.searchQuery.bind(this);    
+
     this.state = {
       searchBarOpen: false,
     };
@@ -20,26 +23,31 @@ class NavBar extends React.Component {
   handleClickOutside(event){
     if (this.refs.search && !this.refs.search.contains(event.target)){
       this.setState({ searchBarOpen: false });
+      document.getElementById('search-ele').value = ''
     }
   }
 
-  handleClickOpen() {
+  handleClickOpen(e) {
     if(this.state.searchBarOpen === false){
       this.refs.input.focus()
       this.setState({ searchBarOpen: true });
+      e.target.value = "";
     }
   }
 
-  submitSearch(e){
-    if(this.state.searchBarOpen === true && e.key === 'Enter'){
-      this.props.clearSearch();
-      this.props.search(e.target.value)
-      this.forceUpdate()
-      if(this.props.history.location.pathname !== './search'){     
-        this.props.history.push("/search");
-      }
+  searchQuery(e){
+    if (e.target.value === ""){
+      this.props.history.push("/browse")
+    } else {
+      this.props.history.push(editSearchRoute(e.target.value));
     }
   }
+
+  componentDidUpdate(prevProps){
+        if(this.props.location.pathname !== prevProps.location.pathname){
+            this.setState({path: this.props.location.pathname});
+        }
+    }
 
   render() {
 
@@ -74,7 +82,8 @@ class NavBar extends React.Component {
           <div className="search-container">
             <div className="search" ref="search">
               <input
-                onKeyUp={this.submitSearch}
+                id="search-ele"
+                onChange={this.searchQuery}
                 className={searchBarOpen ? "toggle input" : "input"}
                 type="text"
                 placeholder="Movie titles"
@@ -92,6 +101,12 @@ class NavBar extends React.Component {
             </div>
           </div>
           <p className="email-nav">{this.props.currentUser.email}</p>
+            <a href="https://github.com/michellenaim" target="_blank">
+          <img className="github-logo" src={window.githubLogo}></img>
+          </a>
+          <a href="https://www.linkedin.com/in/michellenaim/" target="_blank">
+            <img className="linkedin-logo" src={window.linkedinLogo}></img>
+          </a>
           <button
             className="logoutbtn"
             onClick={() => {
@@ -111,6 +126,12 @@ class NavBar extends React.Component {
           </Link>
         </div>
         <div className="nav-right">
+          <a href="https://github.com/michellenaim" target="_blank">
+            <img className="github-logo" src={window.githubLogo}></img>
+          </a>
+          <a href="https://www.linkedin.com/in/michellenaim/" target="_blank">
+            <img className="linkedin-logo" src={window.linkedinLogo}></img>
+          </a>
           {this.props.history.location.pathname !== "/login" &&
             this.props.history.location.pathname !== "/signup" && (
               <Link className="loginbtn" to="/login">
