@@ -129,7 +129,7 @@ class NavBar extends React.Component {
           <a href="https://github.com/michellenaim" target="_blank">
             <img className="github-logo" src={window.githubLogo}></img>
           </a>
-          <a href="https://www.linkedin.com/in/michellenaim/" target="_blank">†
+          <a href="https://www.linkedin.com/in/michellenaim/" target="_blank">
             <img className="linkedin-logo" src={window.linkedinLogo}></img>
           </a>
           {this.props.history.location.pathname !== "/login" &&

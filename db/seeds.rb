@@ -128,7 +128,7 @@ case Rails.env
 #--------------- GENRES  ------------------------------------------
 
     thriller = Genre.create({ name: "Thriller"})
-    mystery = Genre.create({ name: "Mysery"})
+    mystery = Genre.create({ name: "Mystery"})
     drama = Genre.create({ name: "Drama"})
     romance = Genre.create({ name: "Romance"})
 
@@ -282,7 +282,7 @@ case Rails.env
 #--------------- GENRES  ------------------------------------------
 
     thriller = Genre.create({ name: "Thriller"})
-    mystery = Genre.create({ name: "Mysery"})
+    mystery = Genre.create({ name: "Mystery"})
     drama = Genre.create({ name: "Drama"})
     romance = Genre.create({ name: "Romance"})
 
@@ -290,6 +290,12 @@ case Rails.env
 #--------------- MOVIE_GENRES LINK  --------------------------------
 
     MovieGenre.create(movie_id: silence_of_the_lambs.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: enola_holmes.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: the_irishman.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: sleepless_in_seattle.id, genre_id: thriller.id)
+    MovieGenre.create(movie_id: murder_mystery.id, genre_id: thriller.id)
+
+
     MovieGenre.create(movie_id: enola_holmes.id, genre_id: mystery.id)
     MovieGenre.create(movie_id: enola_holmes.id, genre_id: drama.id)
     MovieGenre.create(movie_id: the_irishman.id, genre_id: drama.id)
