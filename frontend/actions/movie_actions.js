@@ -1,5 +1,5 @@
 import * as APIUtil from "../util/movie_util";
-import * as SearchUtil from "../search/search_util";
+import * as SearchUtil from "../util/search_util";
 
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
