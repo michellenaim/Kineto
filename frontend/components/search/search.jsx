@@ -80,7 +80,7 @@ class Search extends React.Component {
                       this.props.movies.length > 0 ? this.makeSlices(this.props.movies) :
                       <div>
                           <p className="not-found">
-                            {`Your search for "${this.props.query}" did not have any matcheSuggestions:`} </p>
+                            {`Your search for "${this.props.query}" did not have any matches. Suggestions:`} </p>
                             <ul className="listing">
                                 <li>Try different keywords</li>
                                 <li>Try using a movie title</li>
