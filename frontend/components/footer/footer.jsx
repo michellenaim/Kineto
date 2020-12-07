@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
     return (
-        <div>
-            <p>by Michelle Naim</p>
+        <div className="footer">
+            <p className="footer-text">by Michelle Naim</p>
         </div>
     )
 }
