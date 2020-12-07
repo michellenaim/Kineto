@@ -9,6 +9,7 @@ import MovieIndexContainer from "./browse/movie_index_container";
 import GenreContainer from "./genres/genre_container";
 import ListContainer from "./list/list_container";
 import SearchContainer from './search/search_container';
+import Footer from "./footer/footer";
 
 
 export default () => (
@@ -25,5 +26,6 @@ export default () => (
       <ProtectedRoute path="/movies/:movieId" />
       <Redirect from="/*" to="/" />
     </Switch>
+    <Route path="/" component={Footer} />
   </React.Fragment>
 );
