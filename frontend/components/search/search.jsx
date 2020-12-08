@@ -74,7 +74,7 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div className="search-result-contianer">
+            <div>
                 <div className="search-results">
                     {
                       this.props.movies.length > 0 ? this.makeSlices(this.props.movies) :
