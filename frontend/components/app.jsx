@@ -9,6 +9,7 @@ import MovieIndexContainer from "./browse/movie_index_container";
 import GenreContainer from "./genres/genre_container";
 import ListContainer from "./list/list_container";
 import SearchContainer from './search/search_container';
+import WatchMovieContainer from './watch_movie/watch_movie_container'
 import Footer from "./footer/footer";
 
 
@@ -23,7 +24,7 @@ export default () => (
       <ProtectedRoute path="/browse" component={MovieIndexContainer} />
       <ProtectedRoute path="/genres/:genreId" component={GenreContainer} />
       <ProtectedRoute path="/users/:userId/lists" component={ListContainer} />
-      <ProtectedRoute path="/movies/:movieId" />
+      <ProtectedRoute path="/movie/:movieId" component={WatchMovieContainer}/>
       <Redirect from="/*" to="/" />
     </Switch>
     <Route path="/browse" component={Footer} />

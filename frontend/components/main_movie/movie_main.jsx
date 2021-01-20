@@ -89,12 +89,6 @@ class MovieMain extends React.Component {
                     &nbsp;&nbsp; Play
                   </Link>
                 </button>
-                <button className="main-info-button">
-                  <Link to={`/`}>
-                    <i className="fa fa-info-circle" aria-hidden="true"></i>
-                    &nbsp;&nbsp; More Info
-                  </Link>
-                </button>
               </div>
             </div>
           </div>
