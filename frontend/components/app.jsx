@@ -26,6 +26,8 @@ export default () => (
       <ProtectedRoute path="/movies/:movieId" />
       <Redirect from="/*" to="/" />
     </Switch>
-    <Route path="/" component={Footer} />
+    <Route path="/browse" component={Footer} />
+    <Route path="/users/:userId/lists" component={Footer} />
+
   </React.Fragment>
 );

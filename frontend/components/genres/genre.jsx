@@ -9,7 +9,7 @@ class Genre extends React.Component {
       left: 0
     };
     this.slider = React.createRef()
-  }
+  };
 
   componentDidMount() {
     if (this.props.movies) {
@@ -50,25 +50,47 @@ class Genre extends React.Component {
     // const genreMovies = movies.filter((movie) =>
     //   new Set(genre.movieIds).has(movie.id)
     // );
+    const rowLen = movies.length
 
     return (
       <div className="genre">
         <p className="genre-title">{genre.name}</p>
         <div className="btn prev" onClick={() => this.scroll('left')}>{"<"}</div>
           <div className="movies" ref={this.slider}>
-            {movies.map((movie) => (
-              <GenreItem
-                key={movie.id}
-                movie={movie}
-                selected={this.state.preview === movie.id}
-                onMouseEnter={() => this.setState({ preview: movie.id })}
-                onMouseLeave={() => this.setState({ preview: null })}
-                deleteListMovie={this.props.deleteListMovie}
-                addToList={this.props.addToList}
-                currentUser={this.props.currentUser}
-                lists={this.props.lists}
-              />
-            ))}
+            {movies.map((movie, i) => {
+              if (movies.length - 1 === i){
+                return(
+                  <div>
+                      <GenreItem
+                      key={movie.id}
+                      movie={movie}
+                      selected={this.state.preview === movie.id}
+                      onMouseEnter={() => this.setState({ preview: movie.id })}
+                      onMouseLeave={() => this.setState({ preview: null })}
+                      deleteListMovie={this.props.deleteListMovie}
+                      addToList={this.props.addToList}
+                      currentUser={this.props.currentUser}
+                      lists={this.props.lists}
+                    />
+                    {/* <div className="extra-space"></div> */}
+                  </div>
+                )
+              } else {
+                return(
+                <GenreItem
+                  key={movie.id}
+                  movie={movie}
+                  selected={this.state.preview === movie.id}
+                  onMouseEnter={() => this.setState({ preview: movie.id })}
+                  onMouseLeave={() => this.setState({ preview: null })}
+                  deleteListMovie={this.props.deleteListMovie}
+                  addToList={this.props.addToList}
+                  currentUser={this.props.currentUser}
+                  lists={this.props.lists}
+                />
+                )}
+            }
+            )}
           </div>
          <div className="btn next" onClick={() => this.scroll('right')}>{">"}</div> 
       </div>

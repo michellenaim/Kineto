@@ -20,9 +20,11 @@ class MovieIndex extends React.Component {
     return (
       <div>
         <MovieMain key={this.props.movies.id} movies={this.props.movies} fetchMovies={this.props.fetchMovies}/>
-        {this.props.genres.map((genre) => {
-          return <GenreContainer genreId={genre.id} genres={this.props.genres} fetchGenres={this.props.fetchGenres}/>
-        })}
+        <div className="movies-genre-container">
+          {this.props.genres.map((genre) => {
+            return <GenreContainer genreId={genre.id} genres={this.props.genres} fetchGenres={this.props.fetchGenres}/>
+          })}
+        </div>
       </div>
     );
   }

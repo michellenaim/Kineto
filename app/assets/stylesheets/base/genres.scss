@@ -7,12 +7,13 @@
   left: 0;
   top: 0;
   background-color: black;
-  color: white;
+  color: rgb(128,133,136);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
+  // min-height: 86vh;
 }
 
 .genre-title {
@@ -61,6 +62,7 @@
   align-items: flex-start;
   width: 100%;
   bottom: 10px;
+  color: white;
 }
 
 .movie-info-left {
@@ -88,6 +90,11 @@
 
 .fas{
  cursor: pointer;
+}
+
+.list-button button{
+  border: none;
+  color: white;
 }
 
 .btn {
@@ -156,3 +163,12 @@
     background: black;
     list-style-position: inside;
 }
+
+.my-list{
+  min-height: 86vh;
+  background-color: black;
+}
+
+// .extra-space{
+//   min-height: 86vh;
+// }

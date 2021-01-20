@@ -2,9 +2,10 @@ import React from "react";
 
 function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <p className="footer-text">by Michelle Naim</p>
-        </div>
+            <p className="footer-date">December 2020</p>
+        </footer>
     )
 }
 
