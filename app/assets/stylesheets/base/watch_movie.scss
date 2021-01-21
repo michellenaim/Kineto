@@ -1,3 +1,23 @@
 .movie-page-container{
     background-color: black;
+    color: white;
+    padding-top: 20px;
+}
+
+.arrow{
+    font-size: 23px;
+    display: flex;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.watch-movie-video{
+    width: 100%;
+}
+
+.back-button{
+    padding-left: 15px;
+    font-size: 18px;
+    padding-top: 1px;
+    cursor: pointer;
 }

@@ -24,7 +24,7 @@ export default () => (
       <ProtectedRoute path="/browse" component={MovieIndexContainer} />
       <ProtectedRoute path="/genres/:genreId" component={GenreContainer} />
       <ProtectedRoute path="/users/:userId/lists" component={ListContainer} />
-      <ProtectedRoute path="/movie/:movieId" component={WatchMovieContainer}/>
+      <ProtectedRoute path="/movies/:movieId" component={WatchMovieContainer}/>
       <Redirect from="/*" to="/" />
     </Switch>
     <Route path="/browse" component={Footer} />

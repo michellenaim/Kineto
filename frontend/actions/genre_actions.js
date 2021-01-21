@@ -11,10 +11,9 @@ const receiveGenres = (genres) => {
 };
 
 const receiveGenre = (payload) => {
-  // debugger
   return {
-  type: RECEIVE_GENRE,
-  payload,
+    type: RECEIVE_GENRE,
+    payload,
   }
 };
 
@@ -25,6 +24,7 @@ export const fetchGenres = () => (dispatch) => {
 };
 
 export const fetchGenre = (genreId) => (dispatch) => {
+  debugger;
   return GenreApiUtils.fetchGenre(genreId).then((genre) =>
     dispatch(receiveGenre(genre))
   );

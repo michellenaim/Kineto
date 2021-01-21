@@ -31,7 +31,7 @@ class GenreItem extends React.Component {
         const list = lists.find(list => list.movie_id === movie.id)
         const preview = (
             <div className="movie-item">
-            <Link to={`/movie/${movie.id}`}>
+            <Link to={`/movies/${movie.id}`}>
                 <video
                 className="movie-video"
                 autoPlay
