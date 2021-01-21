@@ -78,7 +78,6 @@ The future directions for Kineto are to enable users to view the movie trailers 
       </Link>
     </div>
   );
-    // debugger
   const image = (
       <img width="250" src={movie.photoURL} />
   );

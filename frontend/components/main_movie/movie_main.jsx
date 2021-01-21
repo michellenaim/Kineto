@@ -84,7 +84,7 @@ class MovieMain extends React.Component {
             <div className="main-buttons">
               <div className="left-buttons">
                 <button className="main-play-button">
-                  <Link to={`/`}>
+                  <Link to={`/movies/1`}>
                     <i className="fa fa-play" aria-hidden="true"></i>
                     &nbsp;&nbsp; Play
                   </Link>
@@ -92,16 +92,18 @@ class MovieMain extends React.Component {
               </div>
             </div>
           </div>
-          <video
-            className="main-movie-video"
-            muted={this.state.muted}
-            autoPlay
-            height="595"
-            loop
-          >
-            <source src="https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/movie.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Link to={`/movies/1`}>
+            <video
+              className="main-movie-video"
+              muted={this.state.muted}
+              autoPlay
+              height="595"
+              loop
+            >
+              <source src="https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/movie.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Link>
         </>
         {/* {movie} */}
       </div>

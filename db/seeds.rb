@@ -21,7 +21,7 @@ case Rails.env
 
 #--------------- DEMO USER ---------------------------------------
 
-      demouser= User.create!(email: "test@test.com", password: "password")
+      demouser= User.create!(email: "demo@demouser.com", password: "password")
 
 #--------------- MOVIES  ------------------------------------------
 
@@ -175,7 +175,7 @@ case Rails.env
 
 #--------------- DEMO USER ---------------------------------------
 
-      demouser= User.create!(email: "test@test.com", password: "password")
+      demouser= User.create!(email: "demo@demouser.com", password: "password")
 
 #--------------- MOVIES  ------------------------------------------
 

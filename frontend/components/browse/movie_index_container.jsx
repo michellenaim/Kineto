@@ -6,7 +6,6 @@ import { fetchMovies } from "../../actions/movie_actions";
 import { fetchGenre, fetchGenres } from "../../actions/genre_actions";
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
     genres: Object.values(state.entities.genres),
     movies: Object.values(state.entities.movies),

@@ -16,7 +16,7 @@ class Genre extends React.Component {
       this.props.fetchMoviesGenres();
     }
     this.props.fetchLists();
-    this.props.fetchGenre(this.props.genreId);
+    //this.props.fetchGenre(this.props.genreId);
   }
 
   componentDidUpdate(prevProps){
@@ -37,7 +37,6 @@ class Genre extends React.Component {
     }
 
   render() {
-    // debugger 
 
     if (!this.props.genre || this.props.movies.length < 1) {
       return null;
@@ -60,7 +59,6 @@ class Genre extends React.Component {
         <div className="btn prev" onClick={() => this.scroll('left')}>{"<"}</div>
           <div className="movies" ref={this.slider}>
             {movies.map((movie, i) => {
-              if (movies.length - 1 === i){
                 return(
                   <div>
                       <GenreItem
@@ -74,24 +72,9 @@ class Genre extends React.Component {
                       currentUser={this.props.currentUser}
                       lists={this.props.lists}
                     />
-                    {/* <div className="extra-space"></div> */}
                   </div>
                 )
-              } else {
-                return(
-                <GenreItem
-                  key={movie.id}
-                  movie={movie}
-                  selected={this.state.preview === movie.id}
-                  onMouseEnter={() => this.setState({ preview: movie.id })}
-                  onMouseLeave={() => this.setState({ preview: null })}
-                  deleteListMovie={this.props.deleteListMovie}
-                  addToList={this.props.addToList}
-                  currentUser={this.props.currentUser}
-                  lists={this.props.lists}
-                />
-                )}
-            }
+              }
             )}
           </div>
          <div className="btn next" onClick={() => this.scroll('right')}>{">"}</div> 
