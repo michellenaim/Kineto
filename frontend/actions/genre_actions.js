@@ -24,7 +24,6 @@ export const fetchGenres = () => (dispatch) => {
 };
 
 export const fetchGenre = (genreId) => (dispatch) => {
-  debugger;
   return GenreApiUtils.fetchGenre(genreId).then((genre) =>
     dispatch(receiveGenre(genre))
   );

@@ -7,7 +7,7 @@ const GenresReducer = (state = {}, action) => {
     case RECEIVE_GENRES:
       nextState = action.genres;
       return nextState;
-      case RECEIVE_GENRE:
+    case RECEIVE_GENRE:
         nextState[action.payload.genre.id] = action.payload.genre
         return nextState;
     default:

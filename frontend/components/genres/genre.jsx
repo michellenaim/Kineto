@@ -12,11 +12,9 @@ class Genre extends React.Component {
   };
 
   componentDidMount() {
-    if (this.props.movies) {
-      this.props.fetchMoviesGenres();
-    }
+    this.props.fetchMoviesGenres();
     this.props.fetchLists();
-    //this.props.fetchGenre(this.props.genreId);
+    this.props.fetchGenre(this.props.genreId);
   }
 
   componentDidUpdate(prevProps){
@@ -52,7 +50,6 @@ class Genre extends React.Component {
     //   new Set(genre.movieIds).has(movie.id)
     // );
     const rowLen = movies.length
-
     return (
       <div className="genre">
         <p className="genre-title">{genre.name}</p>

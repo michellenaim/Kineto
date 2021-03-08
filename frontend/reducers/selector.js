@@ -11,6 +11,7 @@ const selectMoviesByGenre = (state, genreId) => {
       }
     })
   })
+
   return newArray
 
 };
