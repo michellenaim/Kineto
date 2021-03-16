@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class MovieMain extends React.Component {
   constructor(props) {
@@ -14,9 +14,8 @@ class MovieMain extends React.Component {
   }
 
   render() {
-
-    if (!this.props.movies.length){
-      return null
+    if (!this.props.movies.length) {
+      return null;
     }
 
     // const { movies } = this.props;
@@ -31,7 +30,6 @@ class MovieMain extends React.Component {
         <i className="fas fa-volume-up"></i>
       </button>
     );
-  
 
     // const allMovies = movies.map((movie) => {
     //   return (
@@ -80,7 +78,11 @@ class MovieMain extends React.Component {
         <>
           <div className="main-movie-info">
             <p className="main-movie-title">The Silence Of The Lambs</p>
-            <p className="main-movie-des">FBI trainee Clarice Starling ventures into a maximum-security asylum to pick the diseased brain of Hannibal Lecter, a psychiatrist turned cannibal.</p>
+            <p className="main-movie-des">
+              FBI trainee Clarice Starling ventures into a maximum-security
+              asylum to pick the diseased brain of Hannibal Lecter, a
+              psychiatrist turned cannibal.
+            </p>
             <div className="main-buttons">
               <div className="left-buttons">
                 <button className="main-play-button">
@@ -100,7 +102,10 @@ class MovieMain extends React.Component {
               height="595"
               loop
             >
-              <source src="https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/movie.mp4" type="video/mp4" />
+              <source
+                src="https://kineto-seeds.s3-us-west-1.amazonaws.com/media/1/movie.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </Link>
