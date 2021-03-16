@@ -7,7 +7,7 @@
   left: 0;
   top: 0;
   background-color: black;
-  color: rgb(128,133,136);
+  color: rgb(128, 133, 136);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,22 +24,23 @@
 }
 
 .movies {
-    display: flex;
-    width: 100%;
-    bottom: 0;
-    z-index: 1;
-    transition: transform 450ms;
-    overflow: -moz-hidden-unscrollable;
-    overflow-y: hidden;
-    width: 90vw;
-    margin: 0 auto;
-    scrollbar-width: none;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  transition: transform 450ms;
+  overflow-x: hidden;
+  overflow: -moz-hidden-unscrollable;
+  overflow-y: hidden;
+  width: 90vw;
+  margin: 0 auto;
+  scrollbar-width: none;
 }
 
 .genre-item {
   width: 300px;
   height: 200px;
-  flex: 0 0 20.0%;
+  flex: 0 0 20%;
 }
 
 .movie-video {
@@ -88,11 +89,11 @@
   bottom: 10px;
 }
 
-.fas{
- cursor: pointer;
+.fas {
+  cursor: pointer;
 }
 
-.list-button button{
+.list-button button {
   border: none;
   color: white;
 }
@@ -124,7 +125,7 @@
   transform: translateY(45%);
 }
 
-.list{
+.list {
   padding: 20px;
   padding-left: 40px;
   padding-top: 40px;
@@ -135,7 +136,7 @@
   justify-content: flex-start;
 }
 
-.search-items{
+.search-items {
   padding: 20px;
   padding-left: 40px;
   padding-top: 40px;
@@ -146,7 +147,7 @@
   justify-content: flex-start;
 }
 
-.not-found{
+.not-found {
   color: white;
   background: black;
   padding: 20px;
@@ -155,16 +156,16 @@
   font-size: 20px;
 }
 
-.listing{
-    list-style-type: circle;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-    background: black;
-    list-style-position: inside;
+.listing {
+  list-style-type: circle;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background: black;
+  list-style-position: inside;
 }
 
-.my-list{
+.my-list {
   min-height: 86vh;
   background-color: black;
 }
