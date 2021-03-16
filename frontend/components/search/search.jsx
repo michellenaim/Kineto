@@ -12,10 +12,6 @@ class Search extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchMovies();
-  }
-
   displaySearchResults(movies, elementToSkip = 6) {
     if (Object.values(movies).length == 0) {
       return <></>;
