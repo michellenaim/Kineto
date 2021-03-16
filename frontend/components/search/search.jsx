@@ -6,9 +6,6 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.debounceTimer = undefined;
-    this.debounce = this.debounce.bind(this);
-
     this.state = {
       preview: null,
       left: 0,
@@ -19,23 +16,7 @@ class Search extends React.Component {
     this.props.fetchMovies();
   }
 
-  componentDidUpdate(prevState) {
-    const query = this.props.query;
-    if (prevState.query != query) {
-      this.debounce(() => {
-        if (query.length > 0) this.props.searchByName(query);
-      }, 2000)();
-    }
-  }
-
-  debounce(func, delay) {
-    return () => {
-      if (this.debounceTimer) clearTimeout(this.debounceTimer);
-      this.debounceTimer = setTimeout(func, delay);
-    };
-  }
-
-  showSearch(movies, elementToSkip = 6) {
+  displaySearchResults(movies, elementToSkip = 6) {
     if (Object.values(movies).length == 0) {
       return <></>;
     }
@@ -67,7 +48,7 @@ class Search extends React.Component {
       <div>
         <div className="search-results">
           {this.props.movies.length > 0 ? (
-            this.showSearch(this.props.movies)
+            this.displaySearchResults(this.props.movies)
           ) : (
             <div>
               <p className="not-found">
