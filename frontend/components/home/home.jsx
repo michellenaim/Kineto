@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class Home extends React.Component {
   constructor(props) {
@@ -8,8 +8,8 @@ class Home extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    const user = { email: "test@test.com", password: "password" };
-    this.props.login(user).then((user) => this.props.history.push("/browse"));
+    const user = { email: 'demo@demouser.com', password: 'password' };
+    this.props.login(user).then((user) => this.props.history.push('/browse'));
   }
 
   render() {

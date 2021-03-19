@@ -28,13 +28,11 @@ class Genre extends React.Component {
 
   scroll(direction) {
     let offset;
-    direction === 'left' ? (offset = -800) : (offset = 800);
+    direction === 'left' ? (offset = -600) : (offset = 600);
     let width = this.slider.current.scrollWidth;
     let newPosition = this.slider.current.scrollLeft + offset;
     let overflow = newPosition === width;
     if (overflow) this.slider.current.scrollTo(0, 0);
-    if (newPosition < 8 && direction === 'left')
-      this.slider.current.scrollTo(width, 0);
     this.slider.current.scrollBy(offset, 0);
   }
 
